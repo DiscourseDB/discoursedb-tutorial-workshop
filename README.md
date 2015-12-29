@@ -1,2 +1,2 @@
-# discoursedb-tutorial-workshop
-Code and slides for the first DiscourseDB workshop
+# First DiscourseDB Workshop
+This project contains sample code and slides from the first DiscourseDB Workshop (HackDay) on Jan 8, 2016
