@@ -3,7 +3,9 @@ package edu.cmu.cs.lti.discoursedb.tutorial.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Simple PoJo to represent rows in GitHub issue extracts in CSV format.
+ * Simple PoJo to represent rows in GitHub issue extracts in CSV format.<br/>
+ * Expects files with the following header:<br/>
+ * <code>rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,plus_1,urls,issues,userref,code</code><br/>
  * This version always maps to String and does not perform any data conversion. 
  * 
  * @author Oliver Ferschke
