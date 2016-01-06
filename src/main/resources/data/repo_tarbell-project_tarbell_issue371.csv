@@ -1,0 +1,74 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,plus_1,urls,issues,userref,code
+issue_title,371,tarbell-project,tarbell,ghing,2009-07-31 01:31:30+00:00,"It would be really convenient to be able to able to run `tarbell spreadsheet` and have the Google spreadsheet open in my default browser.
+
+I'd also love to be able to run `tarbell browser production` and be able to see the site as deployed in the `production` bucket in my browser.
+
+If these features seem desirable, I'm happy to submit a pull request.
+
+It would be nice to have a way to hook into the tarbell command to be able to add custom management commands, but this seems nontrivial since the tarbell_config.py doesn't get processed until well after the subcommands are wired up.",write,Command to open spreadsheet in browser,githubarchive->issue_titles,false,[],[],[],[]
+issue_event,371,tarbell-project,tarbell,ghing,2015-09-11 23:07:51+00:00,,labeled,None,ghtorrent,false,[],[],[],[]
+issue_comment,371,tarbell-project,tarbell,eads,2015-09-12 00:19:49+00:00,"YES. I love this idea.
+
+On Fri, Sep 11, 2015 at 2:07 PM, Geoffrey Hing <notifications@github.com>
+wrote:
+
+> It would be really convenient to be able to able to run tarbell
+> spreadsheet and have the Google spreadsheet open in my default browser.
+>
+> I'd also love to be able to run tarbell browser production and be able to
+> see the site as deployed in the production bucket in my browser.
+>
+> If these features seem desirable, I'm happy to submit a pull request.
+>
+> It would be nice to have a way to hook into the tarbell command to be able
+> to add custom management commands, but this seems nontrivial since the
+> tarbell_config.py doesn't get processed until well after the subcommands
+> are wired up.
+>
+> —
+> Reply to this email directly or view it on GitHub
+> <https://github.com/tarbell-project/tarbell/issues/371>.
+>
+
+
+
+-- 
+David Eads | http://recoveredfactory.net
+
+""Medical statistics will be our standard of measurement: we will weigh life
+for life and see where the dead lie thicker, among the workers or among the
+privileged."" -- Rudolf Virchow
+",issue,,ghtorrent,false,"[""http://recoveredfactory.net"", ""https://github.com/tarbell-project/tarbell/issues/371>.""]","[{""raw"": ""https://github.com/tarbell-project/tarbell/issues/371"", ""refstyle"": ""url"", ""parts"": [""tarbell-project"", ""tarbell"", ""371"", """"]}]","[""@github""]",[]
+issue_crossref,371,tarbell-project,tarbell,eads,2015-09-12 00:19:49+00:00,"YES. I love this idea.
+
+On Fri, Sep 11, 2015 at 2:07 PM, Geoffrey Hing <notifications@github.com>
+wrote:
+
+> It would be really convenient to be able to able to run tarbell
+> spreadsheet and have the Google spreadsheet open in my default browser.
+>
+> I'd also love to be able to run tarbell browser production and be able to
+> see the site as deployed in the production bucket in my browser.
+>
+> If these features seem desirable, I'm happy to submit a pull request.
+>
+> It would be nice to have a way to hook into the tarbell command to be able
+> to add custom management commands, but this seems nontrivial since the
+> tarbell_config.py doesn't get processed until well after the subcommands
+> are wired up.
+>
+> —
+> Reply to this email directly or view it on GitHub
+> <https://github.com/tarbell-project/tarbell/issues/371>.
+>
+
+
+
+-- 
+David Eads | http://recoveredfactory.net
+
+""Medical statistics will be our standard of measurement: we will weigh life
+for life and see where the dead lie thicker, among the workers or among the
+privileged."" -- Rudolf Virchow
+",write,Referenced in comment in issue tarbell-project/tarbell#371,issue_crossref,false,"[""http://recoveredfactory.net"", ""https://github.com/tarbell-project/tarbell/issues/371>.""]","[{""raw"": ""https://github.com/tarbell-project/tarbell/issues/371"", ""refstyle"": ""url"", ""parts"": [""tarbell-project"", ""tarbell"", ""371"", ""rev""]}, {""raw"": ""tarbell-project/tarbell#371"", ""refstyle"": ""o/p#d"", ""parts"": [""tarbell-project"", ""tarbell"", ""371"", ""rev""]}]","[""@github""]",[]
+issue_event,371,tarbell-project,tarbell,ghing,2015-09-12 02:03:38+00:00,,referenced,583e3159ea6a93509d56813037048133824b2852,ghtorrent,false,[],[],[],[]
