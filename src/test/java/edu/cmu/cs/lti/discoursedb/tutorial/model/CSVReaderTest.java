@@ -25,7 +25,7 @@ public class CSVReaderTest {
     		int i=0;
     		while (it.hasNextValue()) {
     			GitHubIssueComment comment = it.next();
-    			switch(i){
+    			switch(i++){
     				case 0:
     					assertEquals("issue_title",comment.getRectype());
     					assertEquals(371,comment.getIssueid());
@@ -49,7 +49,7 @@ public class CSVReaderTest {
     					assertEquals("ghing",comment.getActor());
     					assertEquals(new Date(1442012871000L),comment.getTime());
     					assertEquals("labeled",comment.getAction());
-    					assertEquals("None",comment.getTitle());
+    					assertEquals(null,comment.getTitle());
     					assertEquals(false,comment.getPlusOne());
     					assertEquals("ghtorrent",comment.getProvenance());
     					assertEquals(2,comment.getUrls().size());
@@ -57,7 +57,6 @@ public class CSVReaderTest {
     					assertEquals("",comment.getText());
     					break;
     			}
-    			i++;
     		}
     	}	
     }
