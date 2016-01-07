@@ -61,8 +61,10 @@ public class TutorialConverter implements CommandLineRunner {
 		
 		//Walk through dataset directory and parse each file
 		logger.info("Start processing dataset");				
-			try (Stream<Path> paths = Files.walk(dataSetPath)) {
-				paths.filter(path->path.toFile().isFile()).filter(path->!path.endsWith(".csv")).forEach(path->processFile(path.toFile()));
+			try (Stream<Path> pathStream = Files.walk(dataSetPath)) {
+				pathStream.filter(path -> path.toFile().isFile())
+					 .filter(path -> !path.endsWith(".csv"))
+					 .forEach(path -> processFile(path.toFile()));
 			}				
     	logger.info("All done.");
 	}
