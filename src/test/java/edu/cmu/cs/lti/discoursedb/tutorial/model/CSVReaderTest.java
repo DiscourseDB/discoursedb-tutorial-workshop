@@ -12,6 +12,11 @@ import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
+/**
+ * Simple junit test case for the GitHub data model.
+ * 
+ * @author Oliver Ferschke
+ */
 public class CSVReaderTest {
 
     @Test
