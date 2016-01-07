@@ -1,0 +1,6 @@
+"rectype","issueid","project_owner","project_name","actor","time","text","action","title","provenance","plus_1","urls","issues","userref","code"
+"pull_request_commit_comment",11,"alecthomas","importmagic","None","None","missing commit comment: comment_id=205142575","comment",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_title",11,"alecthomas","importmagic","None","None","None","write","None","githubarchive->issue_titles","""""","""""","""""","""""",""""""
+"pull_request_history",11,"alecthomas","importmagic","birkenfeld","2015-01-15 03:49:33+00:00",,"opened",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"pull_request_history",11,"alecthomas","importmagic","birkenfeld","2015-01-15 06:26:59+00:00",,"merged",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"pull_request_history",11,"alecthomas","importmagic","birkenfeld","2015-01-15 06:26:59+00:00",,"closed",,"ghtorrent",FALSE,"[]","[]","[]","[]"

@@ -1,0 +1,6 @@
+"rectype","issueid","project_owner","project_name","actor","time","text","action","title","provenance","plus_1","urls","issues","userref","code"
+"pull_request_commit_comment",17,"5monkeys","django-enumfield","None","None","missing commit comment: comment_id=201958997","comment",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_title",17,"5monkeys","django-enumfield","None","None","Hi, I'd like to be able specify ``default=None`` but this wasn't being respected by the old code. Do you think it makes sense in an Enum context? Essentially what I am saying is that it is an error for the user to not specifically choose a value.","write","always respect given default","githubarchive->issue_titles",FALSE,"[]","[]","[]","[]"
+"pull_request_history",17,"5monkeys","django-enumfield","jschneier","2015-01-03 10:18:38+00:00",,"opened",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_comment",17,"5monkeys","django-enumfield","hannseman","2015-01-05 16:58:47+00:00","Thank you for the PR! I think that you should be able to specify `None` as a default but this also fixes another bug that I just noticed where having a default value of 0 will be ignored.","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"pull_request_history",17,"5monkeys","django-enumfield","hannseman","2015-01-05 16:59:05+00:00",,"closed",,"ghtorrent",FALSE,"[]","[]","[]","[]"

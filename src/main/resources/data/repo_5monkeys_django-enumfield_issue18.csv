@@ -1,0 +1,28 @@
+"rectype","issueid","project_owner","project_name","actor","time","text","action","title","provenance","plus_1","urls","issues","userref","code"
+"issue_title",18,"5monkeys","django-enumfield","thedrow","2009-01-24 16:16:55+00:00","All major databases that Django support already supports enums at the database level.
+* Postgres supports [enums](http://postgresguide.com/sexy/enums.html)
+* MySQL supports [enums](http://dev.mysql.com/doc/refman/5.7/en/enum.html)
+* Oracle supports [enums](https://docs.oracle.com/cd/E17952_01/refman-5.6-en/enum.html)
+
+You can also implement [enums in SQLite using CHECK](http://stackoverflow.com/questions/5299267/how-to-create-enum-type-in-sqlite#answer-17203007).
+
+Is there a good way to hook into south and django migrations framework in order to make this field use their native database type?","write","Use native enums if the database supports them","githubarchive->issue_titles",FALSE,"[""http://dev.mysql.com/doc/refman/5.7/en/enum.html)"", ""http://postgresguide.com/sexy/enums.html)"", ""http://stackoverflow.com/questions/5299267/how-to-create-enum-type-in-sqlite#answer-17203007)."", ""https://docs.oracle.com/cd/E17952_01/refman-5.6-en/enum.html)""]","[]","[]","[]"
+"issue_comment",18,"5monkeys","django-enumfield","hannseman","2015-01-08 15:24:46+00:00","Good idea, it would be interesting to try it out. It could be as simple as overriding `db_type` on the `EnumField`-class. 
+
+https://docs.djangoproject.com/en/dev/howto/custom-model-fields/#custom-database-types
+
+
+
+","issue",,"ghtorrent",FALSE,"[""https://docs.djangoproject.com/en/dev/howto/custom-model-fields/#custom-database-types""]","[]","[]","[]"
+"issue_comment",18,"5monkeys","django-enumfield","thedrow","2015-01-08 19:15:38+00:00","In postgres you have to run CREATE TYPE first so a migration is required.
+On the other databases it should be a matter of overrriding db_type.","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_comment",18,"5monkeys","django-enumfield","AncientSwordRage","2015-02-09 16:50:52+00:00","Any progress on this?","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_comment",18,"5monkeys","django-enumfield","thedrow","2015-02-09 17:09:02+00:00","I'm gonna try to implement it when I'm in London.
+The next Django sprint will take place there.","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_comment",18,"5monkeys","django-enumfield","kjagiello","2015-08-14 16:07:24+00:00","""2. Changing the member list of ENUM columns is very expensive.""
+ http://komlenic.com/244/8-reasons-why-mysqls-enum-data-type-is-evil/ ","issue",,"ghtorrent",FALSE,"[""http://komlenic.com/244/8-reasons-why-mysqls-enum-data-type-is-evil/""]","[]","[]","[]"
+"issue_comment",18,"5monkeys","django-enumfield","kaidokert","2015-09-02 02:15:42+00:00","I'm looking at a different path, which would have enum values in a classic lookup table with foreign key instead. The table has auto_id, enum_value, enum_label , and i'm trying to come up with a reasonably safe sync method that updates existing databases with new model code from the enum classes as needed.
+
+django-enumfield is cool as its implemented, but i really want to enforce referential integrity at the db level, and also have my database make sense to someone who has never looked at django/python at all.
+
+If someone has done this already, i'd appreciate a pointer.","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"

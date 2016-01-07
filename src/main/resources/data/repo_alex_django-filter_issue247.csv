@@ -1,0 +1,8 @@
+"rectype","issueid","project_owner","project_name","actor","time","text","action","title","provenance","plus_1","urls","issues","userref","code"
+"pull_request_commit_comment",247,"alex","django-filter","None","None","missing commit comment: comment_id=259991075","comment",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_title",247,"alex","django-filter","None","None","We don't need call super `__init__` twice. 
+Thanks to @kkujawinski https://github.com/alex/django-filter/commit/978edc3795d02f92ff31a69c051bcc5bf142a99c#commitcomment-11257798","write","Get rid of unnecessary code","githubarchive->issue_titles",FALSE,"[""https://github.com/alex/django-filter/commit/978edc3795d02f92ff31a69c051bcc5bf142a99c#commitcomment-11257798""]","[]","[""@kkujawinski""]","[]"
+"pull_request_history",247,"alex","django-filter","bogdal","2015-05-19 15:50:07+00:00",,"opened",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_comment",247,"alex","django-filter","carltongibson","2015-05-19 16:18:05+00:00","Ah, yes. Thanks for the correction.","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_comment",247,"alex","django-filter","carltongibson","2015-05-19 16:18:05+00:00","Ah, yes. Thanks for the correction.","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"pull_request_history",247,"alex","django-filter","carltongibson","2015-05-19 16:18:11+00:00",,"closed",,"ghtorrent",FALSE,"[]","[]","[]","[]"

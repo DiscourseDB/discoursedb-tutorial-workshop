@@ -3,8 +3,10 @@ package edu.cmu.cs.lti.discoursedb.tutorial.converter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.util.Iterator;
-import java.util.stream.StreamSupport;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,9 +15,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.MappingIterator;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 
@@ -44,37 +44,50 @@ public class TutorialConverter implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 				
+		//Parse command line param with dataset name
 		final String dataSetName=args[0];		
 		if(dataSourceService.dataSourceExists(dataSetName)){
 			logger.warn("Dataset "+dataSetName+" has already been imported into DiscourseDB. Terminating...");			
 			return;
 		}
 		
-		final String dataSetFileName = args[1];
-		File dataSetFile = new File(dataSetFileName);
-		if (!dataSetFile.exists() || !dataSetFile.isFile() || !dataSetFile.canRead()) {
-			logger.error("Dataset does not exist or is not readable.");
-			throw new RuntimeException("Can't read file "+dataSetFileName);
+		//Parse command line param with dataset location
+		final Path dataSetPath = Paths.get(args[1]);
+		File dataSetFile = dataSetPath.toFile();
+		if (!dataSetFile.exists() || dataSetFile.isFile() || !dataSetFile.canRead()) {
+			logger.error("Provided location is a file and not a directory.");
+			throw new RuntimeException("Can't read directory "+dataSetPath);
 		}
 		
-		logger.info("Start processing dataset");
-		
-    	try(InputStream in = new FileInputStream("src/test/resources/data/githubIssueCommentTest.csv");) {
-    		CsvMapper mapper = new CsvMapper();
-    		CsvSchema schema = mapper.schemaWithHeader().withColumnSeparator(',');
-    		MappingIterator<GitHubIssueComment> it = mapper.readerFor(GitHubIssueComment.class).with(schema).readValues(in);
-    		while (it.hasNextValue()) {
-    			
-    			//TODO pass each data point to the converter which then performs the mapping in a transaction
-    			//don't perform the mapping here directly, since it would not allow the transactions to be
-    			//work properly
-    			
-    		}
-    	}
-		
+		//Walk through dataset directory and parse each file
+		logger.info("Start processing dataset");				
+			try (Stream<Path> paths = Files.walk(dataSetPath)) {
+				paths.filter(path->path.toFile().isFile()).filter(path->!path.endsWith(".csv")).forEach(path->processFile(path.toFile()));
+			}				
     	logger.info("All done.");
 	}
 
-
+	/**
+	 * Parses a dataset file, binds its contents to a POJO and passes it on to the DiscourseDB converter
+	 * 
+	 * @param file an dataset file to process
+	 */
+	private void processFile(File file){
+		logger.info("Processing "+file);				
+   		try(InputStream in = new FileInputStream(file);) {
+       		CsvMapper mapper = new CsvMapper();
+       		CsvSchema schema = mapper.schemaWithHeader().withNullValue("None");
+       		MappingIterator<GitHubIssueComment> it = mapper.readerFor(GitHubIssueComment.class).with(schema).readValues(in);
+       		while (it.hasNextValue()) {
+       			GitHubIssueComment currentComment = it.next();
+       			//TODO pass each data point to the converter which then performs the mapping in a transaction
+       			//don't perform the mapping here directly, since it would not allow the transactions to be
+       			//work properly
+       			
+       		}
+       	}catch(Exception e){
+       		logger.error("Could not parse data file "+file, e);
+       	}    		
+	}
 
 }

@@ -1,0 +1,29 @@
+"rectype","issueid","project_owner","project_name","actor","time","text","action","title","provenance","plus_1","urls","issues","userref","code"
+"issue_title",25,"aaren","notedown","asimjalis","2010-03-21 12:13:16+00:00","It would be nice to have a ""--match indented"". In other words, the opposite of ""--match fenced"". 
+
+Benefits are:
+
+1. Easy to indicate syntax of non-executable code (using fencing) so IPYN syntax highlighting can work.
+
+2. Easy to distinguish executable vs non-executable code.","write","Option --match not-fenced","githubarchive->issue_titles",FALSE,"[]","[]","[]","[]"
+"issue_comment",25,"aaren","notedown","aaren","2015-08-12 12:27:00+00:00","So `notedown --match indented` would only execute indented code and would leave fenced code as-is in a markdown cell?","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_comment",25,"aaren","notedown","aaren","2015-08-12 12:29:30+00:00","You can already do `notedown --match strict`, which requires executed code to have `.input` in the classes, e.g.
+
+    ```
+    not executed
+    ```
+
+    ```{.input}
+    executed
+    ```
+
+    ```{.python}
+    not executed
+    ```
+
+    ```{.python .input}
+    executed
+    ```
+
+","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_event",25,"aaren","notedown","aaren","2015-08-12 19:28:53+00:00",,"labeled","None","ghtorrent",FALSE,"[]","[]","[]","[]"

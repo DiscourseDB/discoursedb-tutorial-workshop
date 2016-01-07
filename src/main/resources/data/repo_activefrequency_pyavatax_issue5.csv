@@ -1,0 +1,8 @@
+"rectype","issueid","project_owner","project_name","actor","time","text","action","title","provenance","plus_1","urls","issues","userref","code"
+"pull_request_commit_comment",5,"activefrequency","pyavatax","None","None","missing commit comment: comment_id=307644830","comment",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_title",5,"activefrequency","pyavatax","None","None","Per be277496dc, soap support was removed in favor of rest/json; thus the
+dep is no longer necessary.","write","Remove the suds-jurko dependncy.","githubarchive->issue_titles",FALSE,"[]","[]","[]","[]"
+"pull_request_history",5,"activefrequency","pyavatax","ferringb","2015-09-03 01:36:20+00:00",,"opened",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"pull_request_history",5,"activefrequency","pyavatax","jobelenus","2015-09-03 19:39:17+00:00",,"merged",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"pull_request_history",5,"activefrequency","pyavatax","jobelenus","2015-09-03 19:39:17+00:00",,"closed",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+"issue_comment",5,"activefrequency","pyavatax","jobelenus","2015-09-03 19:39:24+00:00","Thank you.","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
