@@ -34,6 +34,7 @@ import edu.cmu.cs.lti.discoursedb.tutorial.model.GitHubIssueComment;
  */
 @Component
 @Order(1)
+@SuppressWarnings("unused")
 public class TutorialConverter implements CommandLineRunner {
 
 	private static final Logger logger = LogManager.getLogger(TutorialConverter.class);	
