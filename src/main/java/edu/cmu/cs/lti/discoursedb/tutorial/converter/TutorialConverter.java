@@ -83,10 +83,8 @@ public class TutorialConverter implements CommandLineRunner {
        		MappingIterator<GitHubIssueComment> it = mapper.readerFor(GitHubIssueComment.class).with(schema).readValues(in);
        		while (it.hasNextValue()) {
        			GitHubIssueComment currentComment = it.next();
-       			//TODO pass each data point to the converterService which then performs the mapping in a transaction
-       			//don't perform the mapping here directly, since it would not allow the transactions to be
-       			//work properly
-       			
+
+				long id = converterService.mapIssueComment(currentComment); 
        		}
        	}catch(Exception e){
        		logger.error("Could not parse data file "+file, e);
