@@ -1,0 +1,100 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,36,eneim,Toro,GaurangShahaAppstute,2016-04-14 09:16:35+00:00,"Followed the configuration steps provided but gradle is showing Error:(31, 13) Failed to resolve: com.github.eneim:Toro:1.2.0.
+
+**Top level build.gradle is as below -**
+
+```groovy
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+       maven { url ""https://jitpack.io"" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+```
+
+**Module level build.gradle is as below -**
+
+```groovy
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion ""23.0.3""
+
+    defaultConfig {
+        applicationId ""in.appstute.myapplication""
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName ""1.0""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+repositories {
+    maven { url ""https://jitpack.io"" }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:design:23.2.1'
+    compile 'com.github.eneim:Toro:1.2.0'
+}
+```
+
+Hope I will get quick response. Thanks in advance. :)",start issue,Unable to add Toro in android studio,api.github.com,,false,"[""https://jitpack.io"", ""https://jitpack.io""]",[],[],[]
+issue_comment,36,eneim,Toro,eneim,2016-04-14 09:25:31+00:00,"Thanks for your interest. I made a change on your comment to make your code looks better.
+
+Can you provide me some following information:
+
+- gradle version (from ```/gradle/gradle-wrapper.properties``` file)
+- Android Studio version
+- Which you prefer to use now: ```classpath 'com.android.tools.build:gradle:1.5.0'``` or ```classpath 'com.android.tools.build:gradle:2.0.0' ```.
+
+- And please check your internet connection too.
+
+If you can run gradle task with option ```--info``` or ```--trace```, please give me the error output.",,,api.github.com,,false,[],[],[],[]
+issue_comment,36,eneim,Toro,GaurangShahaAppstute,2016-04-14 09:36:15+00:00,"- gradle version (from /gradle/gradle-wrapper.properties file) is 2.8
+
+`#Wed Oct 21 11:34:03 PDT 2015
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-2.8-all.zip`
+
+- Android Studio version is 1.5.1
+
+- I can use any of `classpath 'com.android.tools.build:gradle:1.5.0'` or` classpath 'com.android.tools.build:gradle:2.0.0'`.
+
+- Also I was connected to internet.
+",,,api.github.com,,false,[],[],[],[]
+issue_closed,36,eneim,Toro,GaurangShahaAppstute,2016-04-14 12:12:01+00:00,,closed issue,Unable to add Toro in android studio,api.github.com,,false,[],[],[],[]
+issue_comment,36,eneim,Toro,GaurangShahaAppstute,2016-04-14 12:12:01+00:00,"For gradle lower than 2.11 I was getting  **peer not authenticated error when downloading with gradle**. Able to add the library after updating gradle to 2.11. To update the version I changed to distributionUrl=https\://services.gradle.org/distributions/gradle-2.11-all.zip in /gradle/gradle-wrapper.properties file. 
+Thanks @eneim for the direction and creating such great library. :+1: ",,,api.github.com,,false,[],[],"[""@eneim""]",[]

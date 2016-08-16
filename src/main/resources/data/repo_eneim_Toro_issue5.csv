@@ -1,0 +1,4 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,5,eneim,Toro,eneim,2016-02-02 23:28:41+00:00,ViewHolder at index **-1** won't be rebound but it is cached (scrapped) instead.,start issue,Playback life cycle doesn't match RecyclerView's viewholder cycle,api.github.com,,false,[],[],[],[]
+issue_closed,5,eneim,Toro,eneim,2016-02-03 06:13:02+00:00,,closed issue,Playback life cycle doesn't match RecyclerView's viewholder cycle,api.github.com,,false,[],[],[],[]
+issue_comment,5,eneim,Toro,eneim,2016-02-03 06:13:02+00:00,Fixed in #6 ,,,api.github.com,,false,[],"[{""raw"": ""#6"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""6"", """"]}]",[],[]

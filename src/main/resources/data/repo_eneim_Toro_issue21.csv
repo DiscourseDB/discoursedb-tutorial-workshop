@@ -1,0 +1,15 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,21,eneim,Toro,gouravd,2016-03-08 08:29:17+00:00,"I guess adding support for Audio would be not very difficult by extending current framework. Is it something that can be accomodated in 1.2.0?
+
+Bonus points for adding Visualization for Audio. :+1: ",start issue,Support for autoplay and loop Audio,api.github.com,,false,[],[],[],[]
+issue_comment,21,eneim,Toro,eneim,2016-03-08 08:35:49+00:00,You mean ***only*** Audio? Like playing general music from your sdcard?. That is not considered now. Please keep in mind that Audio playback (no Surface) is totally different to Video playback (requires Surface).,,,api.github.com,,false,[],[],[],[]
+issue_comment,21,eneim,Toro,gouravd,2016-03-09 04:11:03+00:00,"Right, but can we not use the same logic for audio. It should be easier as it does not require any surface, just requires MediaPlayer.
+
+What I am doing currently is 
+1) Extending ToroVideoViewHolder, but not setting the videoview any url in the OnBind.
+2) Extending wantsToPlay and setting MediaPlayer url for the audio. This way the audio starts playing according to the proper strategy.
+
+But I am unable to figure out how to stop the audio when the item becomes invisible. Can you suggest some ideas",,,api.github.com,,false,[],[],[],[]
+issue_comment,21,eneim,Toro,eneim,2016-03-09 04:19:49+00:00,You can have that from onDetachedFromParent callback. Let's give it a try.,,,api.github.com,,false,[],[],[],[]
+issue_closed,21,eneim,Toro,gouravd,2016-03-21 13:41:10+00:00,,closed issue,Support for autoplay and loop Audio,api.github.com,,false,[],[],[],[]
+issue_comment,21,eneim,Toro,gouravd,2016-03-21 13:41:10+00:00,"Yes, it works. Thanks",,,api.github.com,,false,[],[],[],[]

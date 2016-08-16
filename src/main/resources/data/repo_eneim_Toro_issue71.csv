@@ -1,0 +1,7 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,71,eneim,Toro,eneim,2016-06-29 10:16:42+00:00,Refactoring for ver 2,c818efb1e13e5d8aeaaf24c8f5b7d69f2f34c660,,api.github.com,,false,[],[],[],[]
+pull_request_title,71,eneim,Toro,eneim,2016-06-29 10:17:51+00:00,Refactoring part 2.,b28787453e6de273f7232c39b2126ca0e769dcc8,Refactoring for ver 2,api.github.com,,false,[],[],[],[]
+issue_title,71,eneim,Toro,eneim,2016-06-29 10:17:52+00:00,Refactoring part 2.,start issue,Refactoring for ver 2,api.github.com,,false,[],[],[],[]
+pull_request_commit,71,eneim,Toro,eneim,2016-06-29 10:20:08+00:00,Remove a comment,b28787453e6de273f7232c39b2126ca0e769dcc8,,api.github.com,,false,[],[],[],[]
+issue_closed,71,eneim,Toro,eneim,2016-06-29 10:20:44+00:00,,closed issue,Refactoring for ver 2,api.github.com,,false,[],[],[],[]
+pull_request_merged,71,eneim,Toro,eneim,2016-06-29 10:20:44+00:00,Refactoring for ver 2,2443768c1e5d2533047ba2a0867ad567651d990d,Pull request merge from eneim/Toro:feature/refactor-part2 to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

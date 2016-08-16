@@ -1,0 +1,167 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,37,eneim,Toro,rajivenator,2016-05-03 13:51:35+00:00,"Hi,
+I have tried to implement your library in my app as it resolves one of the pain points of videos in Recycler view.
+
+This implementation ran for the first time. But later on whenever i run the same app the videos won't play.
+I get the following in my crash log:
+
+```
+05-03 19:15:12.898 31897-31897/com.playtm.android.lyfe_client D/ViewRootImpl: ViewPostImeInputStage processPointer 0
+05-03 19:15:13.008 31897-31897/com.playtm.android.lyfe_client I/ToroViewHolder: VideoView Rect: 10 | Point(20, 2249) | Rect(20, 2404 - 1420, 3804)
+05-03 19:15:13.008 31897-31897/com.playtm.android.lyfe_client E/ToroViewHolder: Parent    Rect: 10 | Point(0, 320) | Rect(0, 320 - 1440, 2560)
+05-03 19:15:13.048 31897-31897/com.playtm.android.lyfe_client D/ViewRootImpl: ViewPostImeInputStage processPointer 1
+05-03 19:15:13.078 31897-31897/com.playtm.android.lyfe_client V/MediaPlayer-JNI: native_setup
+05-03 19:15:13.078 31897-31897/com.playtm.android.lyfe_client V/MediaPlayer: constructor
+05-03 19:15:13.078 31897-31897/com.playtm.android.lyfe_client V/MediaPlayer: setListener
+05-03 19:15:13.078 31897-31897/com.playtm.android.lyfe_client V/MediaPlayer-JNI: set_session_id(): 4202
+05-03 19:15:13.078 31897-31897/com.playtm.android.lyfe_client V/MediaPlayer: MediaPlayer::setAudioSessionId(4202)
+05-03 19:15:13.078 31897-31897/com.playtm.android.lyfe_client D/RingtoneManager: Can't get current user. return default user
+05-03 19:15:13.078 31897-31897/com.playtm.android.lyfe_client W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://res.cloudinary.com/playtm/video/upload/v1452364506/cuhod78iuoiab2kke1yw.3gp
+05-03 19:15:13.078 31897-31897/com.playtm.android.lyfe_client D/MediaPlayer: setDataSource IOException | SecurityException happend : 
+                                                                             java.io.FileNotFoundException: No content provider: http://res.cloudinary.com/playtm/video/upload/v1452364506/cuhod78iuoiab2kke1yw.3gp
+                                                                                 at android.content.ContentResolver.openTypedAssetFileDescriptor(ContentResolver.java:1141)
+                                                                                 at android.content.ContentResolver.openAssetFileDescriptor(ContentResolver.java:991)
+                                                                                 at android.content.ContentResolver.openAssetFileDescriptor(ContentResolver.java:914)
+                                                                                 at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1121)
+                                                                                 at im.ene.lab.toro.widget.ToroVideoView.openVideo(ToroVideoView.java:635)
+                                                                                 at im.ene.lab.toro.widget.ToroVideoView.access$2000(ToroVideoView.java:68)
+                                                                                 at im.ene.lab.toro.widget.ToroVideoView$8.onSurfaceTextureAvailable(ToroVideoView.java:289)
+                                                                                 at android.view.TextureView.getHardwareLayer(TextureView.java:368)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16441)
+                                                                                 at android.view.View.draw(View.java:17238)
+                                                                                 at android.view.ViewGroup.drawChild(ViewGroup.java:3921)
+                                                                                 at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3711)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16459)
+                                                                                 at android.view.View.draw(View.java:17238)
+                                                                                 at android.view.ViewGroup.drawChild(ViewGroup.java:3921)
+                                                                                 at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3711)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16459)
+                                                                                 at android.view.View.draw(View.java:17238)
+                                                                                 at android.view.ViewGroup.drawChild(ViewGroup.java:3921)
+                                                                                 at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3711)
+                                                                                 at android.view.View.draw(View.java:17472)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16464)
+                                                                                 at android.view.View.draw(View.java:17238)
+                                                                                 at android.view.ViewGroup.drawChild(ViewGroup.java:3921)
+                                                                                 at android.support.v7.widget.RecyclerView.drawChild(RecyclerView.java:3838)
+                                                                                 at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3711)
+                                                                                 at android.view.View.draw(View.java:17472)
+                                                                                 at android.support.v7.widget.RecyclerView.draw(RecyclerView.java:3308)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16464)
+                                                                                 at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3905)
+                                                                                 at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3885)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16424)
+                                                                                 at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3905)
+                                                                                 at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3885)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16424)
+                                                                                 at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3905)
+                                                                                 at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3885)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16424)
+                                                                                 at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3905)
+                                                                                 at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3885)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16424)
+                                                                                 at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3905)
+                                                                                 at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3885)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16424)
+                                                                                 at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3905)
+                                                                                 at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3885)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16424)
+                                                                                 at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3905)
+                                                                                 at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3885)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16424)
+                                                                                 at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3905)
+                                                                                 at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3885)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16424)
+                                                                                 at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3905)
+                                                                                 at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3885)
+                                                                                 at android.view.View.updateDisplayListIfDirty(View.java:16424)
+                                                                                 at android.view.ThreadedRenderer.updateViewTreeDisplayList(ThreadedRenderer.java:325)
+                                                                             	at android.view.ThreadedRenderer.updateRootDisplayList(Thr
+05-03 19:15:13.078 31897-31897/com.playtm.android.lyfe_client V/MediaPlayer: setVideoSurfaceTexture
+05-03 19:15:13.088 31897-31897/com.playtm.android.lyfe_client V/MediaPlayer-JNI: setAudioStreamType: 3
+05-03 19:15:13.088 31897-31897/com.playtm.android.lyfe_client V/MediaPlayer: MediaPlayer::setAudioStreamType
+05-03 19:15:13.088 31897-31897/com.playtm.android.lyfe_client W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+05-03 19:15:13.088 31897-31897/com.playtm.android.lyfe_client V/MediaPlayer: setVideoSurfaceTexture
+05-03 19:15:13.088 31897-31897/com.playtm.android.lyfe_client V/MediaPlayer: prepareAsync
+05-03 19:15:13.088 31897-31909/com.playtm.android.lyfe_client D/MediaHTTPConnection: setReadTimeOut =  30000ms
+05-03 19:15:13.088 31897-1426/com.playtm.android.lyfe_client D/MediaHTTPConnection: setReadTimeout with 30000ms
+```
+
+Tried on Lollipop and Marshmallow phones.
+The videos load once and later don't work
+I am using 1.2.0 library of TORO 
+",start issue,Cannot Play video from url.. Though it played for the first time ,api.github.com,,false,"[""http://res.cloudinary.com/playtm/video/upload/v1452364506/cuhod78iuoiab2kke1yw.3gp"", ""http://res.cloudinary.com/playtm/video/upload/v1452364506/cuhod78iuoiab2kke1yw.3gp""]",[],[],[]
+issue_comment,37,eneim,Toro,iamlipan,2016-05-04 09:46:38+00:00,the same problem,,,api.github.com,,false,[],[],[],[]
+issue_comment,37,eneim,Toro,rajivenator,2016-05-05 14:50:10+00:00,"Well I tried implementing Exopllayer instead of Torovideo and it works now.
+
+Did not test it with long list of videos but i guess it should work.
+Also have used video cache plugin https://github.com/danikula/AndroidVideoCache
+In my project.
+
+following is my implementation 
+
+```java
+    @Override
+    public void bind(@Nullable Object object) {
+        post = (FeedPost) object;
+        activityId = post.getFeedId();
+        videoPlayOverlay.setVisibility(View.VISIBLE);
+        Glide.with(itemView.getContext()).load(post.getFeedUserImg()).diskCacheStrategy(DiskCacheStrategy.RESULT).into(ivUserProfile);
+        txtUserName.setText(post.getFeedUserName());
+        HttpProxyCacheServer proxy = ((BaseApplication) (itemView.getContext().getApplicationContext())).getProxy();
+        String proxyUrl = proxy.getProxyUrl(post.getMediaCDNVideoThumbUrl());
+        Uri uri = Uri.parse(proxyUrl);
+        mVideoView.setVideoURI(Uri.parse(post.getMediaCDNUrl()));
+        ImageRequest request = ImageRequestBuilder.newBuilderWithSource(uri)
+                .setProgressiveRenderingEnabled(true)
+                .build();
+        DraweeController controller = Fresco.newDraweeControllerBuilder()
+                .setImageRequest(request)
+                .setOldController(ivFeedCenter.getController())
+                .build();
+        ivFeedCenter.setController(controller);
+        videoPlayOverlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        if (post.getMediaCaption() != null) {
+            txtFeedBottom.setText(post.getMediaCaption());
+        }
+        HashMap<String, Emotion> emotionHashMap = post.getFeedEmotion();
+        if (emotionHashMap.containsKey(BaseCore.getInstance().getUserId())) {
+            if (TextUtils.isEmpty(emotionHashMap.get(BaseCore.getInstance().getUserId()).getEmotionText())) {
+                llEmo.setVisibility(View.GONE);
+            } else {
+                llEmo.setVisibility(View.VISIBLE);
+                tvEmo.setText(emotionHashMap.get(BaseCore.getInstance().getUserId()).getEmotionText());
+            }
+        } else {
+            llEmo.setVisibility(View.GONE);
+        }
+    }
+```
+
+
+
+Layout replace torovideo with exovideo
+
+```xml
+<!--    <im.ene.lab.toro.widget.ToroVideoView
+                android:id=""@+id/video""
+                android:layout_width=""match_parent""
+                android:layout_height=""match_parent""
+                android:layout_centerInParent=""true""
+                android:layout_gravity=""center""
+                app:videoScaleMode=""fitWidth""
+                />-->
+            <com.devbrackets.android.exomedia.EMVideoView
+                android:id=""@+id/video""
+                android:layout_width=""match_parent""
+                android:layout_height=""match_parent""
+                EMVideoView:defaultControlsEnabled=""true""/>
+```",,,api.github.com,,false,"[""https://github.com/danikula/AndroidVideoCache""]",[],"[""@Nullable"", ""@Override""]",[]
+issue_comment,37,eneim,Toro,eneim,2016-05-05 14:56:32+00:00,"Hi there, thanks for the issue. I'm away from keyboard for couple days so sorry for the late reply. I made an edit on your comments in code blocks. I will take a look in to your code ASAP.",,,api.github.com,,false,[],[],[],[]
+issue_comment,37,eneim,Toro,pawankumar01,2016-05-28 09:35:31+00:00,Hi @eneim Is playing from URL supported  or any plans till when can it be supported?,,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,37,eneim,Toro,eneim,2016-05-28 13:59:08+00:00,"I'm working on a ExoPlayer-supported branch. Hopefully I could release it soon. At the mean time, please either use your ExoMedia implementation (I could have if you have any issue). FYI my implementation (with native MediaPlayer from Android) works well with Big Buck Bunny URL, so I still need some try with other sources to see what happens. Sorry I'm kind of time-shortage recently.",,,api.github.com,,false,[],[],[],[]

@@ -1,0 +1,13 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,45,eneim,Toro,eneim,2016-05-12 14:25:03+00:00,A sample which will try to mimic Facebook's behaviour,3c507bf937cfd8170c30a7a9aaf68fbf1691f725,,api.github.com,,false,[],[],[],[]
+pull_request_commit,45,eneim,Toro,eneim,2016-05-13 03:30:06+00:00,Prepare stuffs,a7ffcb9426fb327a6bf8d8ee3dcaa1c6031ccbb3,,api.github.com,,false,[],[],[],[]
+pull_request_commit,45,eneim,Toro,eneim,2016-05-13 15:47:46+00:00,make video playable,09aa333d33370c0b9564f452a67fd85e7694096d,,api.github.com,,false,[],[],[],[]
+pull_request_commit,45,eneim,Toro,eneim,2016-05-15 09:15:19+00:00,Update sample for a facebook-alike feed. Still need some minor fixes,8999046cff517b8b0414dc4b0cf7a095e412f762,,api.github.com,,false,[],[],[],[]
+pull_request_commit,45,eneim,Toro,eneim,2016-05-15 14:20:48+00:00,Minor fix,b8d87f8eb2a6c3a7652d7a12ea19bbb5cc8d7407,,api.github.com,,false,[],[],[],[]
+pull_request_commit,45,eneim,Toro,eneim,2016-05-16 01:41:52+00:00,Remove unused stuff,2c958f6b6d7f3fa590192303e92c438cbadcd264,,api.github.com,,false,[],[],[],[]
+pull_request_commit,45,eneim,Toro,eneim,2016-05-19 06:21:25+00:00,Update gradle,76bdbac926e8ec3193467ba9f89f9981d9f7ea1c,,api.github.com,,false,[],[],[],[]
+pull_request_commit,45,eneim,Toro,eneim,2016-05-19 06:23:19+00:00,minor indent fix,e80f8d70f9c1a739c24dfe3bc66a6b58e9aac7cd,,api.github.com,,false,[],[],[],[]
+issue_title,45,eneim,Toro,eneim,2016-05-19 06:23:59+00:00,,start issue,Feature/facebook videolist,api.github.com,,false,[],[],[],[]
+pull_request_title,45,eneim,Toro,eneim,2016-05-19 06:23:59+00:00,,e80f8d70f9c1a739c24dfe3bc66a6b58e9aac7cd,Feature/facebook videolist,api.github.com,,false,[],[],[],[]
+pull_request_merged,45,eneim,Toro,eneim,2016-05-19 06:24:13+00:00,Feature/facebook videolist,3a469a22b60e7a472a148ba4c05875185306b33f,Pull request merge from eneim/Toro:feature/facebook-videolist to eneim/Toro:develop,api.github.com,,false,[],[],[],[]
+issue_closed,45,eneim,Toro,eneim,2016-05-19 06:24:14+00:00,,closed issue,Feature/facebook videolist,api.github.com,,false,[],[],[],[]

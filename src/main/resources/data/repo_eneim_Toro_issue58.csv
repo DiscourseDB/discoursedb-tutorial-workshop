@@ -1,0 +1,7 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,58,eneim,Toro,eneim,2016-06-08 14:28:32+00:00,Add sample code for ver 1 (legacy version),91cc20598c482d9d3304c0a00755da0863eb66e6,,api.github.com,,false,[],[],[],[]
+pull_request_commit,58,eneim,Toro,eneim,2016-06-08 15:34:36+00:00,Update sample for ver 1,bf1b070411f7366932c2654d97c4e02cae339fb5,,api.github.com,,false,[],[],[],[]
+issue_title,58,eneim,Toro,eneim,2016-06-08 15:34:51+00:00,,start issue,Feature/sample v1,api.github.com,,false,[],[],[],[]
+pull_request_title,58,eneim,Toro,eneim,2016-06-08 15:34:51+00:00,,bf1b070411f7366932c2654d97c4e02cae339fb5,Feature/sample v1,api.github.com,,false,[],[],[],[]
+issue_closed,58,eneim,Toro,eneim,2016-06-08 15:34:58+00:00,,closed issue,Feature/sample v1,api.github.com,,false,[],[],[],[]
+pull_request_merged,58,eneim,Toro,eneim,2016-06-08 15:34:58+00:00,Feature/sample v1,c07b9fb17449a61888812047a1e2d2858cbdeb2e,Pull request merge from eneim/Toro:feature/sample-v1 to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

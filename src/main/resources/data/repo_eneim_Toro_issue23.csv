@@ -1,0 +1,359 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,23,eneim,Toro,mahesh2015,2016-03-14 13:43:47+00:00,"More than one video play simultaneously while scrolling from down to top and top to down.
+
+It is unable to cancel last requested video from top position and  and previous top and current top both video play simultaneously.
+
+This issue occur only when if request make to play and immediate scroll to another/next item/video in the list.
+
+I have made changes in the library code to play video until 51% of top  view/video is visible on the screen/viewport (In MyHolder class). 
+
+````
+@Override public boolean wantsToPlay() {
+        Rect childRect = new Rect();
+        itemView.getGlobalVisibleRect(childRect, new Point());
+        // wants to play if user could see at lease 0.51 of video
+        return childRect.height() > mVideoView.getHeight() * 0.51
+                && childRect.width() > mVideoView.getWidth() * 0.51;
+    }
+```
+
+    @Override
+    public float visibleAreaOffset() {
+        Rect videoRect = getVideoRect();
+        Rect parentRect = getRecyclerViewRect();
+        if (parentRect != null /*&& !parentRect.contains(videoRect) && !parentRect.intersect(videoRect)*/) {
+            return 0f;
+        }
+        float area = videoRect.height() * videoRect.width();
+        float viewArea = getVideoView().getWidth() * getVideoView().getHeight();
+        return viewArea <= 0f ? 1.f : area / viewArea;
+    }` 
+",start issue,Play more than one video simultaneously while scrolling down and top. ,api.github.com,,false,[],[],"[""@Override""]",[]
+issue_comment,23,eneim,Toro,eneim,2016-03-14 13:50:46+00:00,"Thanks a lot. I'll work on this ASAP. At the mean time, please checkout develop-SNAPSHOT for a glance to see if it helps or improve your behaviour.",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-03-14 14:29:05+00:00,"My Logcat.
+
+
+
+`03-14 19:54:37.877 2791-2791/com.mpg.myapp D/MediaPlayer: setSubtitleAnchor in MediaPlayer
+03-14 19:54:38.076 2791-5873/com.mpg.myapp W/MediaPlayer: info/warning (3, 0)
+03-14 19:54:38.815 2791-2791/com.mpg.myapp D/MediaPlayer: setSubtitleAnchor in MediaPlayer
+03-14 19:54:38.845 2791-3370/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:38.982 2791-5873/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:38.999 2791-5795/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:39.082 2791-5875/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:39.334 2791-5718/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:39.356 2791-5868/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:39.579 2791-5772/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:40.637 2791-2805/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.598 2791-5549/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.646 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:41.666 2791-2803/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.672 2791-9369/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:41.713 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160309235231253AA.mp4
+03-14 19:54:41.716 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:41.743 2791-2803/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.753 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:41.774 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160308235436147AA.mp4
+03-14 19:54:41.775 2791-9375/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:41.777 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:41.781 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:41.782 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(-1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:41.782 2791-5607/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.832 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:41.851 2791-9380/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:41.857 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160307235359957AA.mp4
+03-14 19:54:41.857 2791-9381/com.mpg.myapp I/MemoryCache: cache size=1843200 length=2
+03-14 19:54:41.860 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:41.862 2791-5772/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.866 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160307103344827AA.mp4
+03-14 19:54:41.867 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:41.871 2791-5875/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.874 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:41.874 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(-1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:41.894 2791-9386/com.mpg.myapp I/MemoryCache: cache size=921600 length=2
+03-14 19:54:41.917 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:41.930 2791-5802/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.931 2791-9387/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:41.948 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:41.965 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160304234635903AA.mp4
+03-14 19:54:41.967 2791-9389/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:41.968 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:41.971 2791-5795/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.978 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160304111329910AA.mp4
+03-14 19:54:41.980 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:41.985 2791-5874/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.985 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160303234544933AA.mp4
+03-14 19:54:41.987 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:41.989 2791-3370/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:41.991 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:41.991 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(-1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:41.991 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:42.010 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:42.032 2791-9396/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:42.043 2791-5802/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:42.066 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:42.081 2791-9398/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:42.099 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:42.115 2791-9401/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:42.138 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:42.154 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160302234441920AA.mp4
+03-14 19:54:42.157 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:42.160 2791-5535/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:42.162 2791-9404/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:42.164 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160302185020390AA.mp4
+03-14 19:54:42.165 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:42.167 2791-2803/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:42.169 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160302001031353AA.mp4
+03-14 19:54:42.171 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:42.173 2791-5755/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:42.176 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(-1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:42.204 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:42.223 2791-9411/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:42.239 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:42.259 2791-9412/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:42.260 2791-5772/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:42.269 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:42.288 2791-9414/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:42.304 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:49.133 2791-5874/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:49.458 2791-9618/com.mpg.myapp I/MemoryCache: cache size=1843200 length=2
+03-14 19:54:49.469 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160226104830250AA.mp4
+03-14 19:54:49.472 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:49.478 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(-1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:49.482 2791-5549/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:49.911 2791-5755/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:50.020 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:50.109 2791-2791/com.mpg.myapp I/MemoryCache: MemoryCache will use up to 8.0MB
+03-14 19:54:50.127 2791-9632/com.mpg.myapp I/MemoryCache: cache size=921600 length=1
+03-14 19:54:50.132 2791-2791/com.mpg.myapp W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: http://waay.videodownload.worldnow.com/WAAY_20160226234736220AA.mp4
+03-14 19:54:50.135 2791-2791/com.mpg.myapp W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+03-14 19:54:50.138 2791-5718/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:50.141 2791-2791/com.mpg.myapp D/AudioManager: AudioManager dispatching onAudioFocusChange(-1) for android.media.AudioManager@f6fdbd3com.mpg.myapp.VideoPlayingActivity@fcd1310
+03-14 19:54:51.574 2791-2791/com.mpg.myapp D/MediaPlayer: setSubtitleAnchor in MediaPlayer
+03-14 19:54:52.086 2791-2791/com.mpg.myapp D/MediaPlayer: setSubtitleAnchor in MediaPlayer
+03-14 19:54:52.113 2791-2791/com.mpg.myapp D/TextureVideoView: onSeekComplete() called with: mp = [android.media.MediaPlayer@90a3a29]
+03-14 19:54:52.135 2791-2941/com.mpg.myapp I/MediaHTTPConnection: proxyName: 0.0.0.0 0
+03-14 19:54:52.155 2791-2791/com.mpg.myapp D/MediaPlayer: setSubtitleAnchor in MediaPlayer
+03-14 19:54:52.232 2791-5772/com.mpg.myapp W/MediaPlayer: info/warning (3, 0)
+03-14 19:54:52.263 2791-5802/com.mpg.myapp W/MediaPlayer: info/warning (3, 0)`",,,api.github.com,,false,"[""http://waay.videodownload.worldnow.com/WAAY_20160226104830250AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160226234736220AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160302001031353AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160302185020390AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160302234441920AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160303234544933AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160304111329910AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160304234635903AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160307103344827AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160307235359957AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160308235436147AA.mp4"", ""http://waay.videodownload.worldnow.com/WAAY_20160309235231253AA.mp4""]",[],"[""@f6fdbd3com"", ""@fcd1310""]",[]
+issue_comment,23,eneim,Toro,eneim,2016-04-06 01:22:39+00:00,"@mahesh2015 Hey there, are you still getting the issue? I have updated develop branch to latest code base. I believe that it could fix various issues including yours. But since I could not test all the case (which even UI testing couldn't), so it would be nice if you take a look and give some feedback. I would make a release base on current branch though.
+
+You can get latest SNAPSHOT from develop by using this:
+
+```compile 'com.github.eneim:Toro:develop-SNAPSHOT'```
+
+Cheers!",,,api.github.com,,false,[],[],"[""@mahesh2015""]",[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-11 11:40:15+00:00,"Hello Nam,
+
+I want to know one thing about your library. Is this library expired or 
+removed from Git-hub after sometime/ year?.  If Yes, then suggest me an 
+alternate solution/option for this library project.
+
+
+Thanks
+Mahesh.
+
+-------------------
+On 4/6/2016 6:52 AM, Nam Nguyen Hoai wrote:
+>
+> @mahesh2015 <https://github.com/mahesh2015> Hey there, are you still 
+> getting the issue? I have updated develop branch to latest code base. 
+> I believe that it could fix various issues including yours. But since 
+> I could not test all the case (which even UI testing couldn't), so it 
+> would be nice if you take a look and give some feedback. I would make 
+> a release base on current branch though.
+>
+> You can get latest SNAPSHOT from develop by using this:
+>
+> |compile 'com.github.eneim:Toro:develop-SNAPSHOT'|
+>
+> Cheers!
+>
+> —
+> You are receiving this because you were mentioned.
+> Reply to this email directly or view it on GitHub 
+> <https://github.com/eneim/Toro/issues/23#issuecomment-206064125>
+>
+
+-- 
+----
+Thanks & Warm Regards
+Mahesh
+Sr. App Developer,
+Fusioni Technologies Pvt. Ltd.
+Cont: +91 8010211159.
+
+",,,api.github.com,,false,"[""https://github.com/eneim/Toro/issues/23#issuecomment-206064125"", ""https://github.com/mahesh2015""]","[{""raw"": ""https://github.com/eneim/Toro/issues/23"", ""refstyle"": ""url"", ""parts"": [""eneim"", ""Toro"", ""23"", """"]}]","[""@mahesh2015""]",[]
+issue_comment,23,eneim,Toro,eneim,2016-04-11 13:41:58+00:00,"@mahesh2015 As long as github stays alive and jitpack.io keeps running the service, I think everything will be fine. I'll consider to migrate this repo to a more mature host (like maven) for back up, but I think you don't need to worry about.",,,api.github.com,,false,[],[],"[""@mahesh2015""]",[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-12 11:29:25+00:00,"Hi Nam,
+I am facing one more problem in Toro Lib i,e.
+ If i am using frame Layout and i have two or more view as shown in screen shot.( bottom of the page are tab Buttons after tapping on these buttons, views are changed (add/removed ) from Frame layout).
+My problem is that
+After start of the application.
+1 .First time when View is opened it play wrong video(2nd item) as in screen shot .
+2. And Second problem is After next visit to this view does not play any video in list (until list does not scrolled ).
+
+I am using this strategy
+        Toro.init(this);
+        Toro.setStrategy(Toro.Strategies.FIRST_PLAYABLE_TOP_DOWN);
+please suggest some idea. ASAP
+![error_autoplay](https://cloud.githubusercontent.com/assets/10514274/14458310/ed5c6662-00cd-11e6-84ae-c1154d5e8a33.jpg)
+
+Thanks
+Mahesh.",,,api.github.com,,false,"[""https://cloud.githubusercontent.com/assets/10514274/14458310/ed5c6662-00cd-11e6-84ae-c1154d5e8a33.jpg""]",[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-12 11:40:26+00:00,How you add/remove the View from FrameLayout? Are you using Fragments or just use a root FraneLayout and its dynamic Children?,,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-12 11:44:01+00:00,"this is the code
+```
+ flContainer.removeAllViews();
+ flContainer.addView(recycler_viewVideoList);
+```
+",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-12 12:11:10+00:00,Why don't you use Fragment transaction instead? It could help your recyclerView to save a lot of useful information. Actually it could solve the 2-nd issue. Please reply if you need help.,,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-12 13:23:05+00:00,"Hello Nam,
+Sorry for delay. Actually the base code of my app is implemented with frame layout and 
+I have to change base code and I have limited time to deliver this app.
+therefore i have to use frame layout.",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-12 13:26:07+00:00,"1. Did you re-add your RecyclerView to Toro after re-adding it to your FrameLayout?
+
+2. Can you debug to see that after re-adding RecyclerView to FrameLayout, is your RecyclerView's ```onAttachedToWindow``` get called? You should go into RecyclerView.class and mark a checkpoint there.",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-12 13:36:42+00:00,"No,      
+
+```java
+if (mRecyclerView.getAdapter() == null) {
+    // add ItemDecoration
+    mRecyclerView.addItemDecoration(new VerticalSpaceItemDecoration(VERTICAL_ITEM_SPACE));
+    mRecyclerView.setAdapter(new MultiVideosListAdapter(HomeActivity.videoUrlListVideo));
+} else {      
+    mRecyclerView.getAdapter().notifyDataSetChanged();
+}
+```",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-12 13:47:38+00:00,"No for which question?
+
+There is one *trick* you can try now:  Call ```mRecyclerView.stopScroll();``` right after you add your view to FrameLayout. Please try this and see if things got better?",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-12 13:51:34+00:00,"For first question NO.  
+onAttachedToWindow and onDetachedFromWindow is called after every add and remove of recyclerview.
+
+
+There is no effect with this statement 
+`mRecyclerView.stopScroll();`
+",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-12 14:36:31+00:00,@mahesh2015 Consider to re-register your View to Toro after you add it to your FrameLayout. Sorry I'm not close to my PC for a while so could not reproduce the process.,,,api.github.com,,false,[],[],"[""@mahesh2015""]",[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-13 07:09:18+00:00,"Hello Nam,
+
+I have registered and unregistered as on add  and remove event in  frame layout.
+But did not Resolved the issue.
+Please let me know one this how can i play a video of a particular index in the list. without affecting other feature/functionality .",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 07:18:31+00:00,"@mahesh2015 , to be able to move further, let me explain how things work now:
+
+- When you setup your RecyclerView, and bring it up and running, your Videos are prepared ***asynchronously***. (If not, I suspect a performance issue).
+
+- After that preparing process finished, the callback ```ToroPlayer#onVideoPrepared()``` got called. From there, *Toro* will listen to that event and trigger the first playback.
+
+Since the prepare process is different for Videos, *there is no guarantee that your Video on top is prepared FIRST and therefore there are chances It is not the first Video to play.*
+
+- When your RecyclerView is back from ***savedInstanceState*** (which is available ***only*** if you properly set it up. For example, following Activity or Fragment's life-cycle). Adding/Removing the view manually by calling ```FrameLayout#addView(View)``` may not maintain your Instance, that't why the second time you add it, it may not work properly.
+
+Actually I hope that re-register it to Toro after you re-add it to your FrameLayout would trigger it to play. Please confirm this point: *After you re-add RecyclerView to your FrameLayout, and re-register it to Toro, your Video playback IS triggered, it's just not in proper order*. <-- Please confirm this. If even you re-register it, no Video plays, then I need to look further for this issue.
+
+-- 
+
+To be able to have a work around, I will need couple hours now. So please stay patient and sorry for any inconvenience.",,,api.github.com,,false,[],[],"[""@mahesh2015""]",[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-13 07:45:05+00:00,I have re-registered and unregistered as on re-add and remove on everytime.But there is no effect.,,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 07:48:24+00:00,"@mahesh2015 I need to confirm 2 points:
+
+**After re-registering the RecyclerView**:
+
+- Video plays or not?
+
+- Video plays in ***wrong*** order or not?
+
+Thanks!",,,api.github.com,,false,[],[],"[""@mahesh2015""]",[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-13 07:50:32+00:00,"Nam Sir,
+
+It is not playing any video either right to wrong.",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 08:00:06+00:00,"Thanks. So for your first issue, the following Strategy could improve the behaviour:
+
+```java
+public static ToroStrategy WORK_AROUND_STRATEGY = new ToroStrategy() {
+    boolean isFirstPlayerPrepared = false;
+
+    @Override public String getDescription() {
+      return ""Start from first Video"";
+    }
+
+    @Override public ToroPlayer findBestPlayer(List<ToroPlayer> candidates) {
+      return Toro.Strategies.FIRST_PLAYABLE_TOP_DOWN.findBestPlayer(candidates);
+    }
+
+    @Override public boolean allowsToPlay(ToroPlayer player, ViewParent parent) {
+      if (player.getPlayOrder() == 0) {
+        isFirstPlayerPrepared = true;
+      }
+      return isFirstPlayerPrepared && Toro.Strategies.FIRST_PLAYABLE_TOP_DOWN.allowsToPlay(player,
+          parent);
+    }
+  };
+```
+
+The trick is to return your preferred play order over ```ToroPlayer#getPlayOrder``` and listen to it to raise a flag indicate that your very First Video is prepared. (You should define your ""First Video"" yourself).
+
+I'm using the default ```Toro.Strategies.FIRST_PLAYABLE_TOP_DOWN```, but surely you can replace it with whichever ***Default*** Strategy you prefer. Or carefully use it with your custom one.
+
+For the second issue (after re-adding your View to FrameLayout, it stops playing), I will need a bit more time. Thanks for co-operate.",,,api.github.com,,false,[],[],"[""@Override""]",[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 08:16:33+00:00,"@mahesh2015 Hm I try to: 1 - remove current RecyclerView from a FrameLayout root, 2 - add a dummy TextView to the root, 3 - remove the TextView (actually I call removeAllViews()), re-add RecyclerView to FrameLayout ***without re-registering it to Toro***, and thing works fine.
+
+Please re-confirm your Toro setup, and if it's available, please send me more code (how you init your RecyclerView, your Adapter, your removing/adding timing ...). Anything could be helpful now.",,,api.github.com,,false,[],[],"[""@mahesh2015""]",[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-13 09:21:23+00:00,"@eneim Sir on my code it is not playing/working i am unable to understand .I have debug my code but did not get any error.
+
+Thank you!.",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 09:46:12+00:00,Well I would like to know more if there is another component which prevent/disturb your View. That's why I want a little bit more about how you setup/implement things.,,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 09:47:08+00:00,And please confirm the snippet/work-around above works for you so I could improve current library code base :D.,,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-13 10:35:37+00:00,"@eneim Above code snippet working fine thank you very much for your support.
+
+I have resolved my issue another way. There is some other code snippet in my code which causing issue. Now i have managed all the things and its working fine.
+
+Thanks
+Mahesh.
+
+",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 10:41:30+00:00,Good to hear. Can you close this issue? I would be easier for me to manager the issue by creating new ones for new issues though.,,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 10:43:56+00:00,"I think you could confirm now, but the latest version 1.2.0 also fixes the issue of off-screen playback. If it happens to you again, please notify me. Thanks and sorry for any inconvenience.",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-13 12:17:17+00:00,"@eneim i am sorry but wrong video issue still exits. After testing 100 times it play 15 times wrong video.
+
+![error](https://cloud.githubusercontent.com/assets/10514274/14492994/98e593fa-01a0-11e6-880d-6953e40a836d.jpg)
+",,,api.github.com,,false,"[""https://cloud.githubusercontent.com/assets/10514274/14492994/98e593fa-01a0-11e6-880d-6953e40a836d.jpg""]",[],"[""@eneim""]",[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 13:49:16+00:00,Ok let me take a look.,,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 14:06:36+00:00,"@mahesh2015 I made a ""small"" tune up my current implementation as follow
+
+```java
+ToroStrategy NEW_WORK_ARROUND = new ToroStrategy() {
+      boolean isFirstPlayerDone = false;
+
+      @Override public String getDescription() {
+        return ""First play video first"";
+      }
+
+      @Override public ToroPlayer findBestPlayer(List<ToroPlayer> candidates) {
+        return backup.findBestPlayer(candidates);
+      }
+
+      @Override public boolean allowsToPlay(ToroPlayer player, ViewParent parent) {
+        boolean allowToPlay =
+            (isFirstPlayerDone || player.getPlayOrder() == 0) &&
+                backup.allowsToPlay(player, parent);
+
+        if (player.getPlayOrder() == 0) {
+          isFirstPlayerDone = true;
+        }
+        return allowToPlay;
+      }
+    }
+```
+
+The point is instead of setting the flag before evaluate it, I evaluate the player before changing the flag. So I force the player number 0 to be the first one to play.
+
+Please try it again.",,,api.github.com,,false,[],[],"[""@Override"", ""@mahesh2015""]",[]
+issue_comment,23,eneim,Toro,mahesh2015,2016-04-13 14:25:48+00:00,"What is **""backup""**?",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-13 14:30:49+00:00,"Just think it as ```Toro.Strategies.FIRST_PLAYABLE_TOP_DOWN``` above. Actually I backup old Strategy which is used in other place, and replace it with new one which is used in current place for testing only. You can safely change it with ```Toro.Strategies.FIRST_PLAYABLE_TOP_DOWN```.",,,api.github.com,,false,[],[],[],[]
+issue_comment,23,eneim,Toro,eneim,2016-04-14 07:46:13+00:00,@mahesh2015 any good news?,,,api.github.com,,false,[],[],"[""@mahesh2015""]",[]
+issue_closed,23,eneim,Toro,eneim,2016-04-17 03:04:41+00:00,,closed issue,Play more than one video simultaneously while scrolling down and top. ,api.github.com,,false,[],[],[],[]

@@ -1,0 +1,9 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,39,eneim,Toro,wemped,2016-05-06 22:48:33+00:00,added option for for ToroVideoView to not request audio focus,a430df896f9a1f34655b5286d465d4ecd1e007b5,,api.github.com,,false,[],[],[],[]
+issue_title,39,eneim,Toro,wemped,2016-05-06 22:51:53+00:00,"I noticed that ToroVideoView always requests the AudioFocus.
+
+This is a small simplistic change to allow background audio.",start issue,added option for for ToroVideoView to not request audio focus,api.github.com,,false,[],[],[],[]
+pull_request_title,39,eneim,Toro,wemped,2016-05-06 22:51:53+00:00,"I noticed that ToroVideoView always requests the AudioFocus.
+
+This is a small simplistic change to allow background audio.",a430df896f9a1f34655b5286d465d4ecd1e007b5,added option for for ToroVideoView to not request audio focus,api.github.com,,false,[],[],[],[]
+issue_closed,39,eneim,Toro,wemped,2016-05-06 22:58:07+00:00,,closed issue,added option for for ToroVideoView to not request audio focus,api.github.com,,false,[],[],[],[]

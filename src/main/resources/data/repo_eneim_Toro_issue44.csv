@@ -1,0 +1,6 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,44,eneim,Toro,chetanurmaliya,2016-05-17 05:22:14+00:00,"I am using com.github.eneim:Toro:1.2.0
+
+In side recycler view video can be in different dimension. So I don't want to restrict the ToroVideoView to particular height. I just want to specify the maximum height of the ToroVideoView.
+",start issue,How to provide max height to ToroVideoView,api.github.com,,false,[],[],[],[]
+issue_comment,44,eneim,Toro,eneim,2016-05-25 12:21:55+00:00,"@chetanurmaliya Sorry I didn't take a look at this issue. At the mean time, I suggest to try my another library which is a tiny implementation of Video view: [FloppyVideoView](https://github.com/eneim/FloppyVideoView). It has a fancy way to work with Video size, and give you ScaleType just like ImageView. I provide an example using Toro (a SNAPSHOT, sorry), so please give it a try and give feedback. I will wrap up and improve Toro in next release soon.",,,api.github.com,,false,"[""https://github.com/eneim/FloppyVideoView""]",[],"[""@chetanurmaliya""]",[]

@@ -1,0 +1,8 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,48,eneim,Toro,Saket89,2016-05-27 07:19:18+00:00,"Log cat : - Error:Execution failed for task ':app:fabricGenerateResourcesDebug'.
+> Crashlytics Developer Tools error
+
+Im getting the above error while building the project.
+
+Please help me out",start issue,Crashlytics developer tool error,api.github.com,,false,[],[],[],[]
+issue_comment,48,eneim,Toro,eneim,2016-05-28 13:56:46+00:00,"Hm do you have Fabric plugin installed in your Android Studio? If not, please install it, register an account (it's free and helpful), login to the plugin and re-build the App again. Comment here if the error re-appears.",,,api.github.com,,false,[],[],[],[]

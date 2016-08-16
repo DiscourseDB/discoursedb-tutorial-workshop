@@ -1,0 +1,15 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,68,eneim,Toro,eneim,2016-06-23 06:31:19+00:00,"Merge pull request #67 from eneim/master
+
+2.0.0 RC3",029286d4061b0688eefbd42f421807ce6799b5ec,,api.github.com,,false,[],"[{""raw"": ""#67"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""67"", """"]}]",[],[]
+pull_request_commit,68,eneim,Toro,eneim,2016-06-23 06:32:40+00:00,Next release is 2.0.0,b8fc3522a1ae7e79ae2d398cd4ccdb1455f450f7,,api.github.com,,false,[],[],[],[]
+pull_request_commit,68,eneim,Toro,eneim,2016-06-23 06:36:11+00:00,"Update CHANGELOG.md
+
+Change ```-``` to ```_```",90bb15aed3acf3ab8b8705a3152b29031db240a4,,api.github.com,,false,[],[],[],[]
+pull_request_commit,68,eneim,Toro,eneim,2016-06-23 09:09:21+00:00,"Quick fixes for LIFE, version is RC4",3fc1a3c6e57a32297247d3c3ccbd1a4c065dbde0,,api.github.com,,false,[],[],[],[]
+pull_request_commit,68,eneim,Toro,eneim,2016-06-23 09:09:34+00:00,Merge branch 'develop' of https://github.com/eneim/Toro into develop,8dd8e472e44abd0abfc4f3395dab9a1b4b1922bd,,api.github.com,,false,"[""https://github.com/eneim/Toro""]",[],[],[]
+pull_request_commit,68,eneim,Toro,eneim,2016-06-23 09:15:39+00:00,Release v2 RC4 for bug fixes,3b2a89da84a43695a904d0319632f9e0d2e20bb6,,api.github.com,,false,[],[],[],[]
+issue_title,68,eneim,Toro,eneim,2016-06-23 09:17:24+00:00,,start issue,Release/v2.0.0 rc4,api.github.com,,false,[],[],[],[]
+pull_request_title,68,eneim,Toro,eneim,2016-06-23 09:17:24+00:00,,3b2a89da84a43695a904d0319632f9e0d2e20bb6,Release/v2.0.0 rc4,api.github.com,,false,[],[],[],[]
+issue_closed,68,eneim,Toro,eneim,2016-06-23 09:17:29+00:00,,closed issue,Release/v2.0.0 rc4,api.github.com,,false,[],[],[],[]
+pull_request_merged,68,eneim,Toro,eneim,2016-06-23 09:17:29+00:00,Release/v2.0.0 rc4,4644a862e16db0bc28ff494223479b6641793d6f,Pull request merge from eneim/Toro:release/v2.0.0-RC4 to eneim/Toro:master,api.github.com,,false,[],[],[],[]

@@ -1,0 +1,7 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,34,eneim,Toro,eneim,2016-04-08 09:26:33+00:00,Add a sample of how to trigger playback manually at runtime,810451a02ff74f0d1d48f224c31a875947185e08,,api.github.com,,false,[],[],[],[]
+pull_request_commit,34,eneim,Toro,eneim,2016-04-08 09:50:51+00:00,Update sample for a toggle-able List,126e4d142af5962eae3f9d323884bb1e831eb257,,api.github.com,,false,[],[],[],[]
+issue_title,34,eneim,Toro,eneim,2016-04-08 09:51:34+00:00,,start issue,Feature/sample triggerable,api.github.com,,false,[],[],[],[]
+pull_request_title,34,eneim,Toro,eneim,2016-04-08 09:51:34+00:00,,126e4d142af5962eae3f9d323884bb1e831eb257,Feature/sample triggerable,api.github.com,,false,[],[],[],[]
+issue_closed,34,eneim,Toro,eneim,2016-04-08 09:51:38+00:00,,closed issue,Feature/sample triggerable,api.github.com,,false,[],[],[],[]
+pull_request_merged,34,eneim,Toro,eneim,2016-04-08 09:51:38+00:00,Feature/sample triggerable,1984fa8e90ef348fe18294aea09a73f2f7f40789,Pull request merge from eneim/Toro:feature/sample-triggerable to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

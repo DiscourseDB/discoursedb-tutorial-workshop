@@ -1,7 +1,7 @@
-"rectype","issueid","project_owner","project_name","actor","time","text","action","title","provenance","plus_1","urls","issues","userref","code"
-"pull_request_commit_comment",19,"5monkeys","django-enumfield","None","None","missing commit comment: comment_id=224678092","comment",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"issue_title",19,"5monkeys","django-enumfield","None","None","A nullable field shouldn't force a choice to be selected. There are many ways this could be achieved; this is just one possibility.","write","If a field is nullable, it should provide an empty choice.","githubarchive->issue_titles",FALSE,"[]","[]","[]","[]"
-"pull_request_history",19,"5monkeys","django-enumfield","jessamynsmith","2015-03-02 02:46:49+00:00",,"opened",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"issue_comment",19,"5monkeys","django-enumfield","hannseman","2015-03-05 22:27:28+00:00","Good catch. Thank you!","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"issue_comment",19,"5monkeys","django-enumfield","hannseman","2015-03-05 22:27:28+00:00","Good catch. Thank you!","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"pull_request_history",19,"5monkeys","django-enumfield","hannseman","2015-03-05 22:27:31+00:00",,"closed",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,19,5monkeys,django-enumfield,jessamynsmith,2015-03-01 20:43:54+00:00,"If a field is nullable, it should provide an empty choice.",9048ede96ab9af597da6dd70ee9c36f757b99bb4,,api.github.com,,false,[],[],[],[]
+issue_title,19,5monkeys,django-enumfield,jessamynsmith,2015-03-01 20:46:49+00:00,A nullable field shouldn't force a choice to be selected. There are many ways this could be achieved; this is just one possibility.,start issue,"If a field is nullable, it should provide an empty choice.",api.github.com,,false,[],[],[],[]
+pull_request_title,19,5monkeys,django-enumfield,jessamynsmith,2015-03-01 20:46:49+00:00,A nullable field shouldn't force a choice to be selected. There are many ways this could be achieved; this is just one possibility.,9048ede96ab9af597da6dd70ee9c36f757b99bb4,"If a field is nullable, it should provide an empty choice.",api.github.com,,false,[],[],[],[]
+issue_comment,19,5monkeys,django-enumfield,hannseman,2015-03-05 16:27:28+00:00,Good catch. Thank you!,,,api.github.com,,false,[],[],[],[]
+issue_closed,19,5monkeys,django-enumfield,hannseman,2015-03-05 16:27:31+00:00,,closed issue,"If a field is nullable, it should provide an empty choice.",api.github.com,,false,[],[],[],[]
+pull_request_merged,19,5monkeys,django-enumfield,hannseman,2015-03-05 16:27:31+00:00,"If a field is nullable, it should provide an empty choice.",400e0165bedcfa07a7dd5dd4ba30c7f3b3b5439a,Pull request merge from jessamynsmith/django-enumfield:allow_blank_choice to 5monkeys/django-enumfield:master,api.github.com,,false,[],[],[],[]

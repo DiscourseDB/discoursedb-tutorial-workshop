@@ -1,0 +1,95 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,33,eneim,Toro,eneim,2016-02-19 02:16:21+00:00,Update gradle plugin version to beta 5,89f5d28173424a4a55540ec925293776d2a0532d,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-01 13:25:28+00:00,Update dependencies,d6f4bc8e97cb12a59410a09fa9b92503dc6d8b7a,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-01 14:37:11+00:00,dynamic version name,86b2a420c0338968c95cb96d3cb06a2f92aa67bc,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-01 14:37:33+00:00,Various fixes around playback cycle,cc07e860c448f449fd98e1e812c9d8d49cdfce6f,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-01 14:57:43+00:00,Minor fix,720f3ba336bb2b8e84d8aeb923e771d7a634d85c,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-02 06:30:31+00:00,"Merge pull request #16 from eneim/fix/playback-cycle
+
+Fix/playback cycle",9fa2ab66f258f0b99d7c706b96456520d739bcef,,api.github.com,,false,[],"[{""raw"": ""#16"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""16"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-02 13:31:22+00:00,Update to 1.2,04daed01951cdbe908d36767842f1e909c01aa7b,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-03 01:47:47+00:00,Support loop playback,a3ddca61436f7c40e8fdfb2f3cab686380eb7e3a,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-03 03:01:11+00:00,Update sample videos,77b42fa21881e6c260c21c530b6da5e8a173d44a,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-03 07:16:36+00:00,Update local IDE setting. Update local sample videos,d399942b117d2a97b2eb759fcc8c45bef256c912,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,ravidsrk,2016-03-06 07:35:01+00:00,Added code syntax highlighting to Readme,9cd2e6b26f6f4666d905206d634f1e51f15458a7,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-06 15:46:28+00:00,"Merge pull request #18 from ravidsrk/patch-1
+
+Added code syntax highlighting to Readme",ab669a81a277218cee5cceee2980f2a01c073538,,api.github.com,,false,[],"[{""raw"": ""#18"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""18"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-07 01:53:10+00:00,Update sample app.,cba9fe37673fc6f481e1d40a433aa10e09b9cc25,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-07 06:52:01+00:00,Minor cleanup,65b4d93f11d8c6542e1216a2d82e7865701f3aca,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-07 07:35:05+00:00,Major fix for scroll listener,b5095a44eac5d6a4decd3c7f0ffaede198ee1cec,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-07 07:39:30+00:00,Add an interface to support custom Layout Manager,f4e33a4279c075313a3e788b8021ff3bd73378e9,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-07 08:34:24+00:00,"Add new lazy strategy, enable pause/resume on demand. Add support for looping by new Config class",5b8bffadcdcebd7762dcf87f8df6076a97c8c17c,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-07 08:44:02+00:00,"Merge pull request #19 from eneim/feature/loop
+
+Feature/loop",c85c2b030a925b29c8f6dbc56c2ca0446008e888,,api.github.com,,false,[],"[{""raw"": ""#19"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""19"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-07 09:03:44+00:00,Update CHANGELOG.md,4f30d1774257e38ec513ce05bc86cd8aacf1fb21,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-07 12:44:43+00:00,Update CHANGELOG.md,a9ba8f120e14611bce9ac7336df3ec59b86d31ea,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-07 13:04:45+00:00,Fix loop playback,8de2e373ee08ca75002d6f68b85287e25c29d685,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-09 03:10:13+00:00,Various update and fixes,bf300eb2f7a3e70adcdaf1583ce7eb23c8e0fe74,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-09 03:13:32+00:00,"Merge pull request #22 from eneim/feature/v1.2/fix-loop
+
+Feature/v1.2/fix loop",4038abd8fd110eafdd3b64efda0be13afa2babe7,,api.github.com,,false,[],"[{""raw"": ""#22"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""22"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-09 03:15:15+00:00,Update CHANGELOG.md,e92f7927953511f6ef5e91ce61c83facdd87bc81,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-11 03:42:59+00:00,"Update gradle and add greedo layout to dependencies (exp, not working now)",e9e10e64f42fbfbae3501f4814a2b094e808cf84,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-11 03:43:13+00:00,Update coding setting,5969abf1496f99b9eefa0739da2c2bd7631889dd,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-11 03:43:40+00:00,Simplify sample button by Custom View,9967a777927934ec0576d21c3265e33ee1dc96cc,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-11 03:44:12+00:00,Simplify sample button by Custom View,2a59aeeaa3b5371199010b01a07a93f1a2d15ae2,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-11 03:44:43+00:00,Update sample for simple video list and (unused) greedo list,8ea2f396539b9cf1522b3888d201421becd38040,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-11 05:01:23+00:00,Attempt to fix this issue,135dcbec6d3d4782baa8d22e41df4e0e62cc3478,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-14 13:56:15+00:00,"Separate 2 inner class to package-private class. This is to help Toro class diet. Add isLoopAble to ToroPlayer, which could help client to gain more control on how the loop playback could be.",33f9aca1f63570967d6b92a60bde25c7f7eec56e,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-14 13:59:04+00:00,"Merge pull request #24 from eneim/fix/issue-17
+
+Fix/issue 17",5754a20fc2c19c2250097cf7bf3ede63d0b3a02c,,api.github.com,,false,[],"[{""raw"": ""#24"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""24"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,gitter-badger,2016-03-15 14:56:14+00:00,Add Gitter badge,de97fb4a171a977e74b885ed1ec08c556a474a0c,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-15 14:58:34+00:00,"Merge pull request #25 from gitter-badger/gitter-badge
+
+Add a Gitter chat badge to README.md",8d860cf932b6b00f31dc7aec4dec70ee680234ea,,api.github.com,,false,[],"[{""raw"": ""#25"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""25"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-16 02:56:09+00:00,Better handling error on playback,79d861eca85f11967d186cbea857ba4a4b3e93af,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-16 03:10:12+00:00,Return boolean from error handle callback,8bcf2a21c53f1c0a389c646b5667f336bc48cbef,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-16 03:10:52+00:00,"Merge pull request #26 from eneim/feature/error-handle
+
+Feature/error handle",35d7c884971aa471fe384afb619277012c2dc9c0,,api.github.com,,false,[],"[{""raw"": ""#26"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""26"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-16 03:12:04+00:00,Update CHANGELOG.md,1dfc677e0948934391b1a0ddcd9ae1e863a51d4e,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-16 03:15:23+00:00,Update CHANGELOG.md,fcdd1dfe16f77d3af8d7d599d5a2e9c136448959,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-16 03:16:43+00:00,Update CHANGELOG.md,5a2b102486e14e4e66f2de3329d5a0d020bcc7e4,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-17 13:51:37+00:00,update gradle plugin,6bb1493f135c82dc6a3a5984f34961e5d91259a5,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-17 14:06:36+00:00,Apply sample code from contributor,9f235995006b8eacc2ea741d94537d70d3613f49,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-17 14:07:03+00:00,"Merge pull request #27 from eneim/feature/error-handle
+
+Feature/error handle",36128ad441e18ecdbd84821a7efa6e81ea84361d,,api.github.com,,false,[],"[{""raw"": ""#27"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""27"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-17 14:12:43+00:00,Force off-screen player to stop playback,0ff5ecde2a915c3f06483b357d33b00b633064b1,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-17 14:56:49+00:00,Minor change in sample app,a15751a7318efdcecec9ab72a7b4bfe7e89b884a,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-21 10:56:36+00:00,Improve sample for next release,ad344fbf7ecd014044a226fe8b3b80de4f679430,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-21 11:03:16+00:00,remove greedo layout. wait for better implementation,bca0677a16a91cf84b5ee18ad30f4b28657d6d48,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-21 11:42:13+00:00,Minor improvement by comments,dbd97c0e03df3f28bac464e97dcd425fb455e580,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-21 12:47:44+00:00,"Merge pull request #29 from eneim/feature/fix-sample-app
+
+Feature/fix sample app",9641a24c985351cf3ff40b33eb159c90a6164b96,,api.github.com,,false,[],"[{""raw"": ""#29"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""29"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-21 13:00:39+00:00,Add fabric,146aebf59dff1af92f0e1b077c2028915d09c038,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-21 13:04:42+00:00,Setup app,7d2bfc0c943d065008b08aa15090ed1e0bc9d39b,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-21 13:05:42+00:00,"Merge pull request #30 from eneim/feature/fix-sample
+
+Feature/fix sample",01533b44761d75fbd453de47078668a3f5097085,,api.github.com,,false,[],"[{""raw"": ""#30"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""30"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-23 03:11:41+00:00,Log out some information,1cbdb2d76ce9d4a73d1ba4ca078c70e41971b4dc,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-23 03:11:57+00:00,Allow loop playback on this ViewHolder,3f757a4396a094092984ab123cd43245a793615c,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-23 03:12:14+00:00,Minor fixes,0de84f7f24458685f9117fe6d0ef7781baf147db,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-23 03:12:27+00:00,Sample code updated,a39aff053ce480cee142e1ebc62ad057b3de2af2,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-23 03:15:38+00:00,Temporary remove ViewPager sample,26791b9191bbdc9b465bc8e18a7b5ec4ab0869fc,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-23 03:53:49+00:00,minor fix,d4dabd79427bad7b9d3c45f95b38fe94d91fcab0,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-23 04:30:52+00:00,Remove obsolete Config class,4e3189b020562493ff69e95204974e5df3c432ea,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-29 14:09:47+00:00,Various update for gradle. Min support version is now 15,b430b4ee6f57a8ac3e61a8a111c239c12225ed28,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-03-30 09:04:28+00:00,Revert build tool to 23.0.2 to make jitpack useable again,5c953c12876ac8e75afbec668d94142a23a37a33,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-04-01 14:03:46+00:00,Update everything :D,ab35db6e9e909ce6f351e0abc12b69b27a68c0a2,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-04-05 15:55:07+00:00,"Merge pull request #32 from eneim/fix/video-rect-recalculate
+
+Fix video rect calculation",d6c1bea4423e9e5efc6b7300b88f800b2a29fee4,,api.github.com,,false,[],"[{""raw"": ""#32"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""32"", """"]}]",[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-04-05 15:55:21+00:00,Fix video rect calculation,8e0ed9ead310cb79254a2fd4c54bfeb28f0eb630,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-04-05 16:11:42+00:00,Update CHANGELOG.md,5158faac6b7fae6ea1e878a20692d912187626aa,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-04-05 16:19:20+00:00,Update CHANGELOG.md,88d453abd5fdc66ad1aa243d6745d55be1f64914,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-04-05 16:20:29+00:00,Update CHANGELOG.md,d3573dbc1d2add8c4a49779179c09f57a1662a4e,,api.github.com,,false,[],[],[],[]
+pull_request_commit,33,eneim,Toro,eneim,2016-04-06 05:02:04+00:00,Create ISSUE_TEMPLATE.md,b1a11ec50b383963b4fa6682fa8adfcdf4d0e051,,api.github.com,,false,[],[],[],[]
+issue_title,33,eneim,Toro,eneim,2016-04-06 09:45:31+00:00,,start issue,Release/1.2.0,api.github.com,,false,[],[],[],[]
+pull_request_title,33,eneim,Toro,eneim,2016-04-06 09:45:31+00:00,,b1a11ec50b383963b4fa6682fa8adfcdf4d0e051,Release/1.2.0,api.github.com,,false,[],[],[],[]
+issue_closed,33,eneim,Toro,eneim,2016-04-06 09:45:42+00:00,,closed issue,Release/1.2.0,api.github.com,,false,[],[],[],[]
+pull_request_merged,33,eneim,Toro,eneim,2016-04-06 09:45:42+00:00,Release/1.2.0,0c09ee8617eed44fe64fda667b4234faf6477d4e,Pull request merge from eneim/Toro:release/1.2.0 to eneim/Toro:master,api.github.com,,false,[],[],[],[]

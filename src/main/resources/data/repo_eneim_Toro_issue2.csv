@@ -1,0 +1,13 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,2,eneim,Toro,eneim,2016-02-01 13:46:45+00:00,Drop supporting for ListView/GridView,d1c5d44f73a274c59930c1cf6a0fb7e6c8338b2e,,api.github.com,,false,[],[],[],[]
+pull_request_commit,2,eneim,Toro,eneim,2016-02-02 01:03:37+00:00,[WIP] support staggered layout manager,3e684500d5b5dbe52c65009786668a309fcfa9eb,,api.github.com,,false,[],[],[],[]
+pull_request_commit,2,eneim,Toro,eneim,2016-02-02 01:07:08+00:00,Try reversed layout,53c40ab21745b24dbc46c461d13e6b16720adc35,,api.github.com,,false,[],[],[],[]
+pull_request_commit,2,eneim,Toro,eneim,2016-02-02 01:10:08+00:00,A better naming,74a324ca09d30e1a41c07507c5ac746ccd664012,,api.github.com,,false,[],[],[],[]
+pull_request_commit,2,eneim,Toro,eneim,2016-02-02 01:19:45+00:00,Re-import TextureVideoView,62afc870c2720e33cd93a5395c3ca2c530cfbc12,,api.github.com,,false,[],[],[],[]
+pull_request_commit,2,eneim,Toro,eneim,2016-02-02 01:42:40+00:00,Correctly indicate that a video is visible by user or not,0a974c74812fb097528ec7820b92adf140f94194,,api.github.com,,false,[],[],[],[]
+pull_request_commit,2,eneim,Toro,eneim,2016-02-02 05:26:28+00:00,Update gradle and android plugin,1ecac70c3edf8c3012abee834beae8a6ddbd85af,,api.github.com,,false,[],[],[],[]
+pull_request_commit,2,eneim,Toro,eneim,2016-02-02 06:58:18+00:00,Minor fix and improvement,a43ded78b509f0e1ca28acf1a8f5c0b73b3b24a2,,api.github.com,,false,[],[],[],[]
+issue_title,2,eneim,Toro,eneim,2016-02-02 07:00:09+00:00,,start issue,Feature/drop listview,api.github.com,,false,[],[],[],[]
+pull_request_title,2,eneim,Toro,eneim,2016-02-02 07:00:09+00:00,,a43ded78b509f0e1ca28acf1a8f5c0b73b3b24a2,Feature/drop listview,api.github.com,,false,[],[],[],[]
+issue_closed,2,eneim,Toro,eneim,2016-02-02 07:00:14+00:00,,closed issue,Feature/drop listview,api.github.com,,false,[],[],[],[]
+pull_request_merged,2,eneim,Toro,eneim,2016-02-02 07:00:14+00:00,Feature/drop listview,85933d9d3109e77a842dd548f73997b2441f7860,Pull request merge from eneim/Toro:feature/drop-listview to eneim/Toro:master,api.github.com,,false,[],[],[],[]

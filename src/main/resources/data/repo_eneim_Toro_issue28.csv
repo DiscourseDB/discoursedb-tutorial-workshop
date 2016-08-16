@@ -1,0 +1,33 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,28,eneim,Toro,ngochuu90,2016-03-21 03:46:18+00:00,,start issue,ToroVideoViewHolder play video very slow on Xiaomi Redmi Note 2,api.github.com,,false,[],[],[],[]
+issue_comment,28,eneim,Toro,eneim,2016-03-21 04:14:12+00:00,"What is your source? How slow is it? How it compares to other VideoView? This lib is completely UI components, I suspect it is your hardware or network problem.",,,api.github.com,,false,[],[],[],[]
+issue_comment,28,eneim,Toro,ngochuu90,2016-03-21 09:02:26+00:00,"Thanks for your comment.
+I tested on 3 devices : LG G3 , Samsung S2 , Xiaomi Note 2 redmi. LG and Samsung works well. Xiaomi play very slow, back screen delay a few minutes.
+
+I see Facebook App use ExoPlayer very smooth. How to implement Exoplayer with ToroAdapter
+Thank you.
+
+Sorry, My English is poor.",,,api.github.com,,false,[],[],[],[]
+issue_comment,28,eneim,Toro,eneim,2016-03-21 10:34:11+00:00,"- If they are under same network condition, use the same content then I have no idea. But first, please check out sample app to see if there is any problem with it.
+
+- I don't know that Facebook use ExoPlayer. If you have any article, please share. For implementation ExoPlayer, there is an open source: ```https://github.com/brianwernick/ExoMedia```. You can take a look. I'm trying to add an example using it soon, but no release date yet.
+
+- You seems to be Vietnamese. In that case, for your best explanation, you could use your native language, I can support.",,,api.github.com,,false,"[""https://github.com/brianwernick/ExoMedia""]",[],[],[]
+issue_comment,28,eneim,Toro,ngochuu90,2016-03-21 14:55:33+00:00,"Hi Mr Nam
+
+Tôi test 3 thiết bị trên cùng 1 nội dung, 1 mạng. Con G3 vs S2 play tương đối tốt. Trên xiaomi ToroVideoPlayer quả thật có vấn đề, onPlaybackStarted() đã được gọi để ẩn Thumbnail, nhưng nó cứ màn hình đen, delay phải 1 vài phút mới phát video được . Phần cứng thì con này ok, auto play trên facebook hay instagram hoạt động mượt.
+
+Tôi có decomplier thử Facebook App, thấy họ có implement ExoPlayer của Google. So sánh tốc độ thì Exoplayer play gần như ngay lập tức.
+
+Cảm ơn bác đã hỗ trợ!",,,api.github.com,,false,[],[],[],[]
+issue_comment,28,eneim,Toro,eneim,2016-03-21 15:27:04+00:00,"@ngochuu90 Nguồn Video của bạn như thế nào? Facebook hoặc Youtube dùng DASH để stream + tự họ encode nên việc gần như lập tức là tất nhiên (của nhà làm ra mà). Nếu bạn dùng video từ nguồn ngoài, ko kiểm soát được: bitrate, codec, resolution ... thì việc chơi nhanh/chậm, bị delay, thời gian để player chuẩn bị (ngay sau khi gọi MediaPlayer#setVideoPath() hay gì đó) sẽ không được đảm bảo. 
+
+Nếu có thể mình muốn bạn gửi link Video khiến Xiaomi bị chậm để mình kiểm chứng hoặc xem xem bản thân Video có biến số kỹ thuật gì có thể làm máy khó chơi hay không. Nếu video cần bản quyền thì mình có thể đảm bảo việc sử dụng nội bộ.",,,api.github.com,,false,[],[],"[""@ngochuu90""]",[]
+issue_comment,28,eneim,Toro,ngochuu90,2016-03-21 15:41:42+00:00,"@eneim http://static.xink.vn/resources/img/upload/ngochuu/videos/09032016110513744.mp4
+Nguồn Video của tôi là mình tự quay rồi up lên, dung lượng ~ 2MB. Mọi Bitrate, resolution có thể kiểm soát được",,,api.github.com,,false,"[""http://static.xink.vn/resources/img/upload/ngochuu/videos/09032016110513744.mp4""]",[],"[""@eneim""]",[]
+issue_comment,28,eneim,Toro,eneim,2016-03-22 02:35:26+00:00,"@ngochuu90 In short: bạn nên xem qua [list này](http://developer.android.com/intl/ja/guide/appendix/media-formats.html#core). Cụ thể: mình thấy video của bạn đc encode theo profile: H264, Hight profile, level 4.1 --> về nguyên tắc sẽ không có full software support. Vì vậy khả năng chơi video bị ảnh hưởng bởi phần cứng là có thể xảy ra. Mình test trên nexus 5, Android 6.0.1 thì thấy lần play đầu tiên Video mất vài giây để chuẩn bị (sẽ hiện black screen). 
+
+Nếu có thể bạn thử chuẩn bị vài sample video, encode **cùng 1 source** về tối đa 720p (để test nên 720p sẽ tiết kiệm băng thông và dễ chơi hơn) với 1 vài profiles khác nhau: ***1.*** Baseline profile, up to level 3.1 (recommended on iOS), ***2.*** Main profile, level 3.1 (recommended on iOS, not in Android's supported list), ***3.*** High profile, level 3.1 (not recommended, for testing only), ***4.*** Hight profile, level 4.1 (current testing video).",,,api.github.com,,false,"[""http://developer.android.com/intl/ja/guide/appendix/media-formats.html#core""]",[],"[""@ngochuu90""]",[]
+issue_closed,28,eneim,Toro,eneim,2016-03-29 13:41:02+00:00,,closed issue,ToroVideoViewHolder play video very slow on Xiaomi Redmi Note 2,api.github.com,,false,[],[],[],[]
+issue_comment,28,eneim,Toro,ngochuu90,2016-03-29 15:18:51+00:00,"@eneim : Bạn cho mình hỏi, làm thế nào để hàm onPlaybackStarted được gọi khi Video được chuẩn bị xong, sẵn sàng Play. Hiện tại mình thấy gọi 1 lúc rồi, Video mới play",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,28,eneim,Toro,eneim,2016-03-29 15:32:48+00:00,"@ngochuu90 Video được chuẩn bị xong sẽ gọi ```ToroPlayer#onVideoPrepared(MediaPlayer);``` (tương đương với ```MediaPlayer.OnPreparedListener#onPrepared(MediaPlayer))```, trong đó ```MediaPlayer``` có thể ***null*** (trong trường hợp bạn không dùng thư viện MediaPlayer có sẵn).",,,api.github.com,,false,[],[],"[""@ngochuu90""]",[]

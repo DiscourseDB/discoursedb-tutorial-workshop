@@ -1,0 +1,17 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,42,eneim,Toro,chetanurmaliya,2016-05-12 06:39:05+00:00,"Using   **com.github.eneim:Toro:1.2.0** 
+
+We have a recycler view which auto displays videos. On list item click we go to another detail activity which continues to display the same video. Now when we close the detail activity and come back to list view, we want that video to resume from a specified video position (basically the position of video where the detailed activity stopped). 
+We are trying to use Seekto(msec) in ToroVideoViewHolder callback methods. But it is playing the video from beginning. 
+",start issue,How to seek video in a recycler view to a specified position.   ,api.github.com,,false,[],[],[],[]
+issue_comment,42,eneim,Toro,eneim,2016-05-12 06:53:03+00:00,Can you give me your Video URL? There are some cases Video could not be seek.,,,api.github.com,,false,[],[],[],[]
+issue_comment,42,eneim,Toro,chetanurmaliya,2016-05-12 07:48:54+00:00,"Here is the video url :http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4
+We are able to seek the video in detail page. Can you let us know at what point or in which method is the video started in recycler view? Basically at that point we want to use SeekTo method.",,,api.github.com,,false,"[""http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4""]",[],[],[]
+issue_comment,42,eneim,Toro,eneim,2016-05-12 07:54:09+00:00,"Oh I guess that Toro just uses its own cached timestamp, so your effort to seek is not listened. I will take a look soon.",,,api.github.com,,false,[],[],[],[]
+issue_comment,42,eneim,Toro,chetanurmaliya,2016-05-12 07:56:58+00:00,"Thanks for the quick revert. 
+It would be great if you can let us know of a work around. We can override a method if required. We want the video playing feature similar to what is there in Facebook.",,,api.github.com,,false,[],[],[],[]
+issue_comment,42,eneim,Toro,eneim,2016-05-12 08:16:32+00:00,Right now create a custom VideoPlayerManager (by implementing VideoPlayerManager interface to your Adapter) could be a work around. And update cached timestamp where you come back from the individual player. I will test my idea soon.,,,api.github.com,,false,[],[],[],[]
+issue_comment,42,eneim,Toro,eneim,2016-05-13 01:19:56+00:00,"@chetanurmaliya I made a sample on [this branch](https://github.com/eneim/Toro/tree/feature/resume-timestamp). It use the single Video list to demonstrate the action. There're still jobs to do to closely mimic Facebook's behaviour, but you can checkout **resume-timestamp** branch and take a look and see if that's what you aim for. I'm updating another/better sample.",,,api.github.com,,false,"[""https://github.com/eneim/Toro/tree/feature/resume-timestamp""]",[],"[""@chetanurmaliya""]",[]
+issue_comment,42,eneim,Toro,eneim,2016-05-15 09:17:57+00:00,"@chetanurmaliya [Here is the latest update on your requirement](https://github.com/eneim/Toro/tree/feature/facebook-videolist). Unfortunately, current version of Toro need to improved (which I already made on this branch) so it's impossible for you to mimic the behaviour with official release. Please checkout the updated branch to see if it helps you. I will made some minor bug fixes and consider to merge the branch into next release.
+
+Thanks.",,,api.github.com,,false,"[""https://github.com/eneim/Toro/tree/feature/facebook-videolist""]",[],"[""@chetanurmaliya""]",[]

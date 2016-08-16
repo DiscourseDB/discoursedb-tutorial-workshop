@@ -1,0 +1,6 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,4,eneim,Toro,eneim,2016-02-02 23:21:27+00:00,"Need to stop a video which doesn't want to play first, then look at the next one.
+
+Now: check the next one first. If it wants to play, then save old video's state and pause playback --> this causes unexpected behavior in one-video list.",start issue,Single video playback,api.github.com,,false,[],[],[],[]
+issue_closed,4,eneim,Toro,eneim,2016-02-03 06:40:11+00:00,,closed issue,Single video playback,api.github.com,,false,[],[],[],[]
+issue_comment,4,eneim,Toro,eneim,2016-02-03 06:40:11+00:00,Fixed in #7 ,,,api.github.com,,false,[],"[{""raw"": ""#7"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""7"", """"]}]",[],[]

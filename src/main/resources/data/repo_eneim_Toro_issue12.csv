@@ -1,0 +1,11 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,12,eneim,Toro,theostanton,2016-02-08 17:21:59+00:00,"Apologies for a feature request in issues section. I can't seem to find the reddit I found the library in, if you have a link to that we could continue discussion there. 
+
+Would love to be able to have more than one video playing at a time by setting a max number in the strategy. Any prospect of implementing this ? ",start issue,Multiple concurrent playing videos ,api.github.com,,false,[],[],[],[]
+issue_comment,12,eneim,Toro,eneim,2016-02-08 17:29:51+00:00,"Here is the link you want
+
+> https://www.reddit.com/r/androiddev/comments/44fket/simple_solution_for_auto_playback_video_list_in/
+
+IMO, I try to avoid multiple video. Since I don't see it's useful. Can you give me a good reason?",,,api.github.com,,false,"[""https://www.reddit.com/r/androiddev/comments/44fket/simple_solution_for_auto_playback_video_list_in/""]",[],[],[]
+issue_closed,12,eneim,Toro,theostanton,2016-02-08 19:03:33+00:00,,closed issue,Multiple concurrent playing videos ,api.github.com,,false,[],[],[],[]
+issue_comment,12,eneim,Toro,theostanton,2016-02-08 19:03:33+00:00,Thanks. Have replied on reddit. ,,,api.github.com,,false,[],[],[],[]

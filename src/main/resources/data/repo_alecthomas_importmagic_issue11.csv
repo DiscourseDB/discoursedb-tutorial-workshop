@@ -1,6 +1,8 @@
-"rectype","issueid","project_owner","project_name","actor","time","text","action","title","provenance","plus_1","urls","issues","userref","code"
-"pull_request_commit_comment",11,"alecthomas","importmagic","None","None","missing commit comment: comment_id=205142575","comment",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"issue_title",11,"alecthomas","importmagic","None","None","None","write","None","githubarchive->issue_titles","""""","""""","""""","""""",""""""
-"pull_request_history",11,"alecthomas","importmagic","birkenfeld","2015-01-15 03:49:33+00:00",,"opened",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"pull_request_history",11,"alecthomas","importmagic","birkenfeld","2015-01-15 06:26:59+00:00",,"merged",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"pull_request_history",11,"alecthomas","importmagic","birkenfeld","2015-01-15 06:26:59+00:00",,"closed",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,11,alecthomas,importmagic,birkenfeld,2015-01-14 21:48:59+00:00,"Fix indexing of C modules that are part of a package.
+
+Previously, e.g. PyQt4/QtCore.so would be indexed as PyQt4.PyQt4.QtCore.",5caa048362a55ba8c80358da9551a5db82a4b4ab,,api.github.com,,false,[],[],[],[]
+issue_title,11,alecthomas,importmagic,birkenfeld,2015-01-14 21:49:33+00:00,"Previously, e.g. PyQt4/QtCore.so would be indexed as PyQt4.PyQt4.QtCore.",start issue,Fix indexing of C modules that are part of a package.,api.github.com,,false,[],[],[],[]
+pull_request_title,11,alecthomas,importmagic,birkenfeld,2015-01-14 21:49:33+00:00,"Previously, e.g. PyQt4/QtCore.so would be indexed as PyQt4.PyQt4.QtCore.",5caa048362a55ba8c80358da9551a5db82a4b4ab,Fix indexing of C modules that are part of a package.,api.github.com,,false,[],[],[],[]
+issue_closed,11,alecthomas,importmagic,alecthomas,2015-01-15 00:26:59+00:00,,closed issue,Fix indexing of C modules that are part of a package.,api.github.com,,false,[],[],[],[]
+pull_request_merged,11,alecthomas,importmagic,alecthomas,2015-01-15 00:26:59+00:00,Fix indexing of C modules that are part of a package.,aa4a3764d43bf806eecb6ca613911628012e2ea9,Pull request merge from alecthomas/importmagic:fix-cmodule-namespaces to alecthomas/importmagic:master,api.github.com,,false,[],[],[],[]

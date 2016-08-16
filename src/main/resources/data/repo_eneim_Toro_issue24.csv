@@ -1,0 +1,7 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,24,eneim,Toro,eneim,2016-03-11 05:01:23+00:00,Attempt to fix this issue,135dcbec6d3d4782baa8d22e41df4e0e62cc3478,,api.github.com,,false,[],[],[],[]
+pull_request_commit,24,eneim,Toro,eneim,2016-03-14 13:56:15+00:00,"Separate 2 inner class to package-private class. This is to help Toro class diet. Add isLoopAble to ToroPlayer, which could help client to gain more control on how the loop playback could be.",33f9aca1f63570967d6b92a60bde25c7f7eec56e,,api.github.com,,false,[],[],[],[]
+issue_title,24,eneim,Toro,eneim,2016-03-14 13:58:58+00:00,,start issue,Fix/issue 17,api.github.com,,false,[],[],[],[]
+pull_request_title,24,eneim,Toro,eneim,2016-03-14 13:58:58+00:00,,33f9aca1f63570967d6b92a60bde25c7f7eec56e,Fix/issue 17,api.github.com,,false,[],[],[],[]
+issue_closed,24,eneim,Toro,eneim,2016-03-14 13:59:04+00:00,,closed issue,Fix/issue 17,api.github.com,,false,[],[],[],[]
+pull_request_merged,24,eneim,Toro,eneim,2016-03-14 13:59:04+00:00,Fix/issue 17,78104517ba44940ec24274ddb5564075dd3a701a,Pull request merge from eneim/Toro:fix/issue-17 to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

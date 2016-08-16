@@ -1,0 +1,11 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,35,eneim,Toro,eneim,2016-04-08 12:12:48+00:00,Long-going branch to help support Youtube videos. This branch works like this: I improve sample app with latest library. Any change from library will be merge to this. But this branch should not be merged to develop.,9b8e690614fbb2ab2e5c8c0e03d9e3ababaea394,,api.github.com,,false,[],[],[],[]
+pull_request_commit,35,eneim,Toro,eneim,2016-04-08 15:27:42+00:00,Add Youtube support to sample App,8f7f0258cb95c6f088ea30082cabf38274749998,,api.github.com,,false,[],[],[],[]
+pull_request_commit,35,eneim,Toro,eneim,2016-04-09 16:39:46+00:00,control orientation,3ceaebba8f57808d4ac2ee2a89dfcfa1627b1dbb,,api.github.com,,false,[],[],[],[]
+pull_request_commit,35,eneim,Toro,eneim,2016-04-10 14:34:58+00:00,Change properties names,6d1e3b34dc49d8ad028c22225f61874ebda034ae,,api.github.com,,false,[],[],[],[]
+pull_request_commit,35,eneim,Toro,eneim,2016-04-10 14:40:39+00:00,minor fixes,72c430829ec00895199a11a68faaf2441488c110,,api.github.com,,false,[],[],[],[]
+pull_request_commit,35,eneim,Toro,eneim,2016-04-10 14:52:57+00:00,Minor fix and improve,020a45d7909a375de78abb0f7574758ca004c3e7,,api.github.com,,false,[],[],[],[]
+issue_title,35,eneim,Toro,eneim,2016-04-10 14:54:05+00:00,Add alpha sample for Youtube support,start issue,Feature/support youtube,api.github.com,,false,[],[],[],[]
+pull_request_title,35,eneim,Toro,eneim,2016-04-10 14:54:05+00:00,Add alpha sample for Youtube support,020a45d7909a375de78abb0f7574758ca004c3e7,Feature/support youtube,api.github.com,,false,[],[],[],[]
+issue_closed,35,eneim,Toro,eneim,2016-04-10 14:54:11+00:00,,closed issue,Feature/support youtube,api.github.com,,false,[],[],[],[]
+pull_request_merged,35,eneim,Toro,eneim,2016-04-10 14:54:11+00:00,Feature/support youtube,8e604aafdc71fb415da2c6bef40dce8b569e4313,Pull request merge from eneim/Toro:feature/support-youtube to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

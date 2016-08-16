@@ -1,0 +1,130 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,31,eneim,Toro,gouravd,2016-03-30 11:41:09+00:00,"Currently I am achieving the above by
+1) In my ViewHolder view, I am placing a ToroVideoView with opacity 0.0 below an Custom View (the custom view is a custom Visualizer view). In future I may replace the custom view with ImageView for Album/song image/thumbnail
+2) With opacity 0.0 and Visibility.VISIBLE, ToroVideoView acts as placeholder for Toro's calculation of strategies when to play video, pause video etc..
+3) But for Audio, To achieve Autoplay Audio, pause audio, resume loop etc..I have something like the below. 
+
+```java
+@Override public boolean wantsToPlay() {
+    // Default implementation
+    boolean res = visibleAreaOffset() == 1.00;
+    readytoplay1 = true;
+
+    if (res && mMediaPlayer != null && readytoplay2) {
+        try {
+            mVisualizer.setEnabled(true);
+            mMediaPlayer.start();
+            handler.post(mUpdateVisualizer);
+        } catch (Exception ex) {
+            Crashlytics.logException(ex);
+        }
+    }
+
+    return res;
+}
+
+@Override
+public void onActivityPaused() {
+    super.onActivityPaused();
+    handler.removeCallbacks(mUpdateVisualizer);
+    if (mMediaPlayer != null) {
+        try {
+            mMediaPlayer.pause();
+        } catch (Exception ex) {
+            Crashlytics.logException(ex);
+        }
+    }
+}
+
+public void onActivityDestroyed() {
+    onDetachedFromParent();
+}
+
+@Override
+public void onActivityResumed() {
+    super.onActivityResumed();
+    handler.post(mUpdateVisualizer);
+    if (mMediaPlayer != null && readytoplay1 && readytoplay2) {
+        try {
+            mMediaPlayer.start();
+        } catch (Exception ex) {
+            Crashlytics.logException(ex);
+        }
+    }
+}
+
+@Override public void onAttachedToParent() {
+    super.onAttachedToParent();
+    if (mMediaPlayer == null) {
+        try {
+            mMediaPlayer = new MediaPlayer();
+            mMediaPlayer.setDataSource(mItem.getUploadUrl());
+            mMediaPlayer.prepareAsync();
+            mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mediaPlayer) {
+                    setupVisualizerFxAndUI();
+                    readytoplay2 = true;
+                    if (readytoplay1 && readytoplay2) {
+                        mVisualizer.setEnabled(true);
+                        mMediaPlayer.start();
+                        handler.post(mUpdateRunnable);
+                        mMessagesAdapter.setToDelete(getAdapterPosition(), true);
+                    }
+                }
+            });
+
+            mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mMediaPlayer.seekTo(0);
+                    mMediaPlayer.start();
+                }
+            });
+
+            mMediaPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+                @Override
+                public boolean onError(MediaPlayer mediaPlayer, int i, int i1) {
+                    return false;
+                }
+            });
+        } catch (Exception ex) {
+            Crashlytics.logException(ex);
+        }
+    }
+}
+
+@Override public void onDetachedFromParent() {
+    super.onDetachedFromParent();
+    if (handler != null)
+        handler.removeCallbacks(mUpdateVisualizer);
+
+    readytoplay1 = false;
+    if (mMediaPlayer != null) {
+        try {
+            mMediaPlayer.pause();
+            mMediaPlayer.release();
+            mMediaPlayer = null;
+            readytoplay2 = false;
+        } catch (Exception ex) {
+            Crashlytics.logException(ex);
+        }
+    }
+
+    if (mVisualizer != null) {
+        try {
+            mVisualizer.release();
+            mVisualizer = null;
+        } catch (Exception ex) {
+            Crashlytics.logException(ex);
+        }
+    }
+}
+```
+
+
+So I believe something in Toro can be built for Audio play, based on what we already have for Video.
+For ex- You may Create ToroAudioViewHolder, which instead of looking for ToroVideoView, looks for ToroAudioView. ToroAudioView can be a simple RelativeLayout inside which users can put ImageView for Album Image or custom view for Visulization. The idea is that the calculation should be done on the ToroAudioView RelativeLayout. After that how you manage the ToroVideoView, you manage the MediaPlayer same way to bind it with Toro's lifecycle and strategies.
+
+In that case, we do not have to manage an instance of MediaPlayer in the viewholder and code becomes much cleaner
+",start issue,"Extend Toro to allow same functionality for Audio playing, pausing, looping as in Video",api.github.com,,false,[],[],"[""@Override""]",[]

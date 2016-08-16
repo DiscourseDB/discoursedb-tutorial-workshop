@@ -1,8 +1,11 @@
-"rectype","issueid","project_owner","project_name","actor","time","text","action","title","provenance","plus_1","urls","issues","userref","code"
-"pull_request_commit_comment",5,"activefrequency","pyavatax","None","None","missing commit comment: comment_id=307644830","comment",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"issue_title",5,"activefrequency","pyavatax","None","None","Per be277496dc, soap support was removed in favor of rest/json; thus the
-dep is no longer necessary.","write","Remove the suds-jurko dependncy.","githubarchive->issue_titles",FALSE,"[]","[]","[]","[]"
-"pull_request_history",5,"activefrequency","pyavatax","ferringb","2015-09-03 01:36:20+00:00",,"opened",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"pull_request_history",5,"activefrequency","pyavatax","jobelenus","2015-09-03 19:39:17+00:00",,"merged",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"pull_request_history",5,"activefrequency","pyavatax","jobelenus","2015-09-03 19:39:17+00:00",,"closed",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"issue_comment",5,"activefrequency","pyavatax","jobelenus","2015-09-03 19:39:24+00:00","Thank you.","issue",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,5,activefrequency,pyavatax,ferringb,2015-09-02 20:34:23+00:00,"Remove the suds-jurko dependncy.
+
+Per be277496dc, soap support was removed in favor of rest/json; thus the
+dep is no longer necessary.",baa11ade74c89b70806b7eda2d71a186d151e1bb,,api.github.com,,false,[],[],[],[]
+issue_title,5,activefrequency,pyavatax,ferringb,2015-09-02 20:36:20+00:00,"Per be277496dc, soap support was removed in favor of rest/json; thus the
+dep is no longer necessary.",start issue,Remove the suds-jurko dependncy.,api.github.com,,false,[],[],[],[]
+pull_request_title,5,activefrequency,pyavatax,ferringb,2015-09-02 20:36:20+00:00,"Per be277496dc, soap support was removed in favor of rest/json; thus the
+dep is no longer necessary.",baa11ade74c89b70806b7eda2d71a186d151e1bb,Remove the suds-jurko dependncy.,api.github.com,,false,[],[],[],[]
+issue_closed,5,activefrequency,pyavatax,jobelenus,2015-09-03 14:39:17+00:00,,closed issue,Remove the suds-jurko dependncy.,api.github.com,,false,[],[],[],[]
+issue_comment,5,activefrequency,pyavatax,jobelenus,2015-09-03 14:39:24+00:00,Thank you.,,,api.github.com,,false,[],[],[],[]

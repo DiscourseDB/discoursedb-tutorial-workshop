@@ -1,0 +1,3 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,41,eneim,Toro,gouravd,2016-05-08 13:07:39+00:00,"Please bring back the SCALE_MODE_FIT_INSIDE scale mode. Currently I have to extend ToroVideoView, with custom Styleable attributes to get this achieved.",start issue,Please reintroduce SCALE_MODE_FIT_INSIDE,api.github.com,,false,[],[],[],[]
+issue_comment,41,eneim,Toro,eneim,2016-05-10 05:22:19+00:00,I will take a look. I disable it due to some shortage of time when I have to re-calculate the dimension. But originally I want the video to be nicely displayed. Stay tune.,,,api.github.com,,false,[],[],[],[]

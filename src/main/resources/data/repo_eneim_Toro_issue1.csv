@@ -1,0 +1,12 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,1,eneim,Toro,eneim,2016-01-31 17:13:53+00:00,Allow custom playing policy,63f1ab1b4fbd479f0ca70528d6a279a890a2319c,,api.github.com,,false,[],[],[],[]
+pull_request_commit,1,eneim,Toro,eneim,2016-01-31 18:29:28+00:00,Add some default policies,a250ba2584ef369ada893795d14f749b8e2cedb3,,api.github.com,,false,[],[],[],[]
+pull_request_commit,1,eneim,Toro,eneim,2016-02-01 01:59:56+00:00,"min support version up to 16, add fitInside scale mode to TextureVideoView [WIP]",662211d4d543d3774ad9a4c333198205751de9a0,,api.github.com,,false,[],[],[],[]
+pull_request_commit,1,eneim,Toro,eneim,2016-02-01 05:00:56+00:00,"Update sample, modify Policy API",78745ada571ef67f24b1e0c754ea3853fc9c2a39,,api.github.com,,false,[],[],[],[]
+pull_request_commit,1,eneim,Toro,eneim,2016-02-01 05:03:53+00:00,"Remove unused file, change HLS video URL",e2e14314389cd38b40c0a9b59372956d7a196811,,api.github.com,,false,[],[],[],[]
+pull_request_commit,1,eneim,Toro,eneim,2016-02-01 05:09:25+00:00,"Add 2 more policies, rename some old one",798dca05ca3c5d4a4469634c6c0624d5e5f2fc08,,api.github.com,,false,[],[],[],[]
+pull_request_commit,1,eneim,Toro,eneim,2016-02-01 05:40:37+00:00,Update helper classes and cleanup,aeddfd4ebbbbb715f75dd2f35fd52cb139828f9d,,api.github.com,,false,[],[],[],[]
+issue_title,1,eneim,Toro,eneim,2016-02-01 05:41:45+00:00,,start issue,Feature/policy,api.github.com,,false,[],[],[],[]
+pull_request_title,1,eneim,Toro,eneim,2016-02-01 05:41:45+00:00,,aeddfd4ebbbbb715f75dd2f35fd52cb139828f9d,Feature/policy,api.github.com,,false,[],[],[],[]
+issue_closed,1,eneim,Toro,eneim,2016-02-01 05:41:50+00:00,,closed issue,Feature/policy,api.github.com,,false,[],[],[],[]
+pull_request_merged,1,eneim,Toro,eneim,2016-02-01 05:41:50+00:00,Feature/policy,b683973f1dee4bf1345f2169fd57164c9901c3ac,Pull request merge from eneim/Toro:feature/policy to eneim/Toro:master,api.github.com,,false,[],[],[],[]

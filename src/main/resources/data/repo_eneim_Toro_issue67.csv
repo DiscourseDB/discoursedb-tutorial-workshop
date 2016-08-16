@@ -1,0 +1,11 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,67,eneim,Toro,eneim,2016-06-23 05:53:01+00:00,Release 2.0.0 RC3,e183ed9050d18aa7f0cae2daed0400491a56aded,,api.github.com,,false,[],[],[],[]
+pull_request_commit,67,eneim,Toro,eneim,2016-06-23 06:16:23+00:00,Update documentation,b5a31dca78fc7560676e496503fdc4ebabfb83e2,,api.github.com,,false,[],[],[],[]
+pull_request_commit,67,eneim,Toro,eneim,2016-06-23 06:17:22+00:00,Minor changes,d64bd696f925abec151094fe7a384ec67b883b63,,api.github.com,,false,[],[],[],[]
+pull_request_commit,67,eneim,Toro,eneim,2016-06-23 06:20:03+00:00,"Merge pull request #66 from eneim/release/v2.0.0-RC3
+
+Release/v2.0.0 rc3",800843287bd1d3dad8debc2f8d61f0e82446b4e6,,api.github.com,,false,[],"[{""raw"": ""#66"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""66"", """"]}]",[],[]
+issue_title,67,eneim,Toro,eneim,2016-06-23 06:31:13+00:00,,start issue,2.0.0 RC3,api.github.com,,false,[],[],[],[]
+pull_request_title,67,eneim,Toro,eneim,2016-06-23 06:31:13+00:00,,800843287bd1d3dad8debc2f8d61f0e82446b4e6,2.0.0 RC3,api.github.com,,false,[],[],[],[]
+issue_closed,67,eneim,Toro,eneim,2016-06-23 06:31:19+00:00,,closed issue,2.0.0 RC3,api.github.com,,false,[],[],[],[]
+pull_request_merged,67,eneim,Toro,eneim,2016-06-23 06:31:19+00:00,2.0.0 RC3,029286d4061b0688eefbd42f421807ce6799b5ec,Pull request merge from eneim/Toro:master to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

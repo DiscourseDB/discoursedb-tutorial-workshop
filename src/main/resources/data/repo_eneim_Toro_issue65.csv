@@ -1,0 +1,10 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,65,eneim,Toro,eneim,2016-06-22 15:18:19+00:00,Final fix for a RC,a5ea3ddea76e2fe03e27d5b9b5ec631574bbca43,,api.github.com,,false,[],[],[],[]
+pull_request_commit,65,eneim,Toro,eneim,2016-06-22 16:14:48+00:00,Cleanup Toro repo,94a03d310b80fa38e5ef5d59de16650543503a4a,,api.github.com,,false,[],[],[],[]
+pull_request_commit,65,eneim,Toro,eneim,2016-06-22 18:41:56+00:00,"Support version down to 15 to help LIFE, add compatible support.",0b1f11f83482e74e3b26801c3471d3855ee3c7a1,,api.github.com,,false,[],[],[],[]
+pull_request_commit,65,eneim,Toro,eneim,2016-06-22 18:49:27+00:00,minor enhancement,5ad837e1ff06e0806a423813c007872fd67f1813,,api.github.com,,false,[],[],[],[]
+pull_request_commit,65,eneim,Toro,eneim,2016-06-22 19:01:23+00:00,Fix coding issues reported from FindBugs,35ccf2456d9d4e1bb20ba57b2a9d102ccadfa8ff,,api.github.com,,false,[],[],[],[]
+issue_title,65,eneim,Toro,eneim,2016-06-22 19:07:05+00:00,,start issue,Feature/release candidate,api.github.com,,false,[],[],[],[]
+pull_request_title,65,eneim,Toro,eneim,2016-06-22 19:07:05+00:00,,35ccf2456d9d4e1bb20ba57b2a9d102ccadfa8ff,Feature/release candidate,api.github.com,,false,[],[],[],[]
+issue_closed,65,eneim,Toro,eneim,2016-06-22 19:07:13+00:00,,closed issue,Feature/release candidate,api.github.com,,false,[],[],[],[]
+pull_request_merged,65,eneim,Toro,eneim,2016-06-22 19:07:13+00:00,Feature/release candidate,7e97a6f1b3e962131dd34c57991e800ef58cee75,Pull request merge from eneim/Toro:feature/release-candidate to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

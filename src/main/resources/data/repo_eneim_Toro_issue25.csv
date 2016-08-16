@@ -1,0 +1,36 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,25,eneim,Toro,gitter-badger,2016-03-15 14:56:14+00:00,"### eneim/Toro now has a Chat Room on Gitter
+
+@eneim has just created a chat room. You can visit it here: [https://gitter.im/eneim/Toro](https://gitter.im/eneim/Toro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&content=body_link).
+
+This pull-request adds this badge to your README.md:
+
+
+[![Gitter](https://badges.gitter.im/eneim/Toro.svg)](https://gitter.im/eneim/Toro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
+
+If my aim is a little off, please [let me know](https://github.com/gitterHQ/readme-badger/issues).
+
+Happy chatting.
+
+
+PS: [Click here](https://gitter.im/settings/badger/opt-out) if you would prefer not to receive automatic pull-requests from Gitter in future.
+",start issue,Add a Gitter chat badge to README.md,api.github.com,,false,"[""https://badges.gitter.im/eneim/Toro.svg"", ""https://github.com/gitterHQ/readme-badger/issues"", ""https://gitter.im/eneim/Toro"", ""https://gitter.im/eneim/Toro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&content=body_link"", ""https://gitter.im/eneim/Toro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"", ""https://gitter.im/settings/badger/opt-out""]",[],"[""@eneim""]",[]
+pull_request_title,25,eneim,Toro,gitter-badger,2016-03-15 14:56:14+00:00,"### eneim/Toro now has a Chat Room on Gitter
+
+@eneim has just created a chat room. You can visit it here: [https://gitter.im/eneim/Toro](https://gitter.im/eneim/Toro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&content=body_link).
+
+This pull-request adds this badge to your README.md:
+
+
+[![Gitter](https://badges.gitter.im/eneim/Toro.svg)](https://gitter.im/eneim/Toro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
+
+If my aim is a little off, please [let me know](https://github.com/gitterHQ/readme-badger/issues).
+
+Happy chatting.
+
+
+PS: [Click here](https://gitter.im/settings/badger/opt-out) if you would prefer not to receive automatic pull-requests from Gitter in future.
+",de97fb4a171a977e74b885ed1ec08c556a474a0c,Add a Gitter chat badge to README.md,api.github.com,,false,"[""https://badges.gitter.im/eneim/Toro.svg"", ""https://github.com/gitterHQ/readme-badger/issues"", ""https://gitter.im/eneim/Toro"", ""https://gitter.im/eneim/Toro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&content=body_link"", ""https://gitter.im/eneim/Toro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"", ""https://gitter.im/settings/badger/opt-out""]",[],"[""@eneim""]",[]
+pull_request_commit,25,eneim,Toro,gitter-badger,2016-03-15 14:56:14+00:00,Add Gitter badge,de97fb4a171a977e74b885ed1ec08c556a474a0c,,api.github.com,,false,[],[],[],[]
+issue_closed,25,eneim,Toro,eneim,2016-03-15 14:58:34+00:00,,closed issue,Add a Gitter chat badge to README.md,api.github.com,,false,[],[],[],[]
+pull_request_merged,25,eneim,Toro,eneim,2016-03-15 14:58:34+00:00,Add a Gitter chat badge to README.md,7f42612b1d4bc0633a20b050197e67b413b362a7,Pull request merge from gitter-badger/Toro:gitter-badge to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

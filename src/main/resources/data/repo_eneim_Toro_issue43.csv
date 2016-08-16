@@ -1,0 +1,11 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,43,eneim,Toro,chetanurmaliya,2016-05-12 08:07:34+00:00,"We have a scrollview which contains ToroVideoView and a MediaController (attached to ToroVideoView). 
+Now when we scroll, toroVideoView is scrolling where as the MediaController is not scrolling. We want the MediaController to scroll along with ToroVideoView, so that it gives the look and feel of one single view.",start issue,How to have a single custom view containing ToroVideoView and MediaController.,api.github.com,,false,[],[],[],[]
+issue_comment,43,eneim,Toro,eneim,2016-05-12 08:14:47+00:00,"So you question doesn't really match the title of 'toggle full screen'.
+
+To answer your question, current built-in ToroVideoView doesn't come with a Video Controller. To have what you want, you can have a FrameLayout which will contain your ToroVideoView on the back and a Controller View on front. You can refer the way to implement that from official VideoView.
+
+It may take me a while to add that into Toro, as it is the matter of time. So if you want it ASAP, please take a look at official VideoView.
+
+P/S: originally I don't want too much control on the List. So depending on the need from community, I will have support for it as well.",,,api.github.com,,false,[],[],[],[]
+issue_comment,43,eneim,Toro,chetanurmaliya,2016-05-12 08:41:01+00:00,"Thanks, I updated the title. ",,,api.github.com,,false,[],[],[],[]

@@ -1,0 +1,9 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,64,eneim,Toro,eneim,2016-06-22 09:19:47+00:00,Rename some classes to better one.,5dade3f40d4c6f9ce705bef7dfda096924b25470,,api.github.com,,false,[],[],[],[]
+pull_request_commit,64,eneim,Toro,eneim,2016-06-22 12:20:38+00:00,Naming convention and some fancy good name ...,2e6d5ba2cb423ecdb7feafed5bb7d63297ecf642,,api.github.com,,false,[],[],[],[]
+issue_title,64,eneim,Toro,eneim,2016-06-22 12:21:46+00:00,,start issue,Feature/rename,api.github.com,,false,[],[],[],[]
+pull_request_title,64,eneim,Toro,eneim,2016-06-22 12:21:46+00:00,,b0774760dd50cc7cb44c33cf42b2987e21c05f43,Feature/rename,api.github.com,,false,[],[],[],[]
+pull_request_commit,64,eneim,Toro,eneim,2016-06-22 12:24:34+00:00,Clean up,c7e04b46065807b7d37275d09629241d72a1d652,,api.github.com,,false,[],[],[],[]
+pull_request_commit,64,eneim,Toro,eneim,2016-06-22 12:35:47+00:00,Here and there,b0774760dd50cc7cb44c33cf42b2987e21c05f43,,api.github.com,,false,[],[],[],[]
+issue_closed,64,eneim,Toro,eneim,2016-06-22 12:39:00+00:00,,closed issue,Feature/rename,api.github.com,,false,[],[],[],[]
+pull_request_merged,64,eneim,Toro,eneim,2016-06-22 12:39:00+00:00,Feature/rename,fc4f02cd5b9cd7bfa84d38e6b30684e79c084cdb,Pull request merge from eneim/Toro:feature/rename to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

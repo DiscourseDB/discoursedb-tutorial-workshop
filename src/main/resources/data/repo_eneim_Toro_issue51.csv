@@ -1,0 +1,8 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,51,eneim,Toro,eneim,2016-06-05 13:08:53+00:00,Attemp to simplify and reconstruct toro into MVP for easier testing and implementing,4dd7ceef320b4828f5f381f86b9e735b02e00dc8,,api.github.com,,false,[],[],[],[]
+issue_title,51,eneim,Toro,eneim,2016-06-05 13:10:21+00:00,…nd implementing,start issue,Attemp to simplify and reconstruct toro into MVP for easier testing a…,api.github.com,,false,[],[],[],[]
+pull_request_title,51,eneim,Toro,eneim,2016-06-05 13:10:21+00:00,…nd implementing,2498d9df07f661e7bd1b3ffd7c2aae2faff3e873,Attemp to simplify and reconstruct toro into MVP for easier testing a…,api.github.com,,false,[],[],[],[]
+pull_request_commit,51,eneim,Toro,eneim,2016-06-05 13:11:24+00:00,Rename classes,df953bb2b8bdefcb4531b6d77510de8a28684ef7,,api.github.com,,false,[],[],[],[]
+pull_request_commit,51,eneim,Toro,eneim,2016-06-05 16:34:44+00:00,"Minor fix for TextureViewView, rename Views",2498d9df07f661e7bd1b3ffd7c2aae2faff3e873,,api.github.com,,false,[],[],[],[]
+issue_closed,51,eneim,Toro,eneim,2016-06-05 16:36:18+00:00,,closed issue,Attemp to simplify and reconstruct toro into MVP for easier testing a…,api.github.com,,false,[],[],[],[]
+pull_request_merged,51,eneim,Toro,eneim,2016-06-05 16:36:18+00:00,Attemp to simplify and reconstruct toro into MVP for easier testing a…,be0f0887889e22d99e48971f8623eb5f8eb7de1c,Pull request merge from eneim/Toro:v2/dev_mvp to eneim/Toro:v2/dev,api.github.com,,false,[],[],[],[]

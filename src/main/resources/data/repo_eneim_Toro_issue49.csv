@@ -1,0 +1,8 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,49,eneim,Toro,Saket89,2016-05-27 14:33:11+00:00,"Logcat : - Activity demovideolist.com.demovideolist.MainActivity has leaked ServiceConnection com.google.android.youtube.player.internal.r$e@16ecdbfe that was originally bound here
+                                                                                 android.app.ServiceConnectionLeaked: Activity demovideolist.com.demovideolist.MainActivity has leaked ServiceConnection com.google.android.youtube.player.internal.r$e@16ecdbfe that was originally bound here
+
+Im gettting the above error while pressing the back button
+
+",start issue,Service Leak Connection for youtube list,api.github.com,,false,[],[],[],[]
+issue_comment,49,eneim,Toro,eneim,2016-05-28 13:55:15+00:00,"I see that too, and wondering if Youtube won't release its resource from its Fragment. I'll try to release it myself, please wait.",,,api.github.com,,false,[],[],[],[]

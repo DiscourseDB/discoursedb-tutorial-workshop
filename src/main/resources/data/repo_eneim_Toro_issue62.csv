@@ -1,0 +1,79 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,62,eneim,Toro,chetanurmaliya,2016-06-20 14:55:10+00:00,"I am using com.github.eneim:Toro:1.2.0
+
+In side the RecycleView list we have the videos for auto play. 
+When network is slow (like in 2G) entire  RecycleView list UI hangs. I am not able to scroll the list.
+
+I see lot of updates in repository. Is library has updated version. 
+Please let me know the best approach to handle it. ",start issue,UI hangs when network is slow (2G),api.github.com,,false,[],[],[],[]
+issue_comment,62,eneim,Toro,eneim,2016-06-20 15:18:51+00:00,"@chetanurmaliya thanks for issue report. Sadly I could not test my lib under 2G connection, I will try it with some dev config later. One of the suggestion now is to disable the auto playback on low network connection. Please search for network state confirmation and then see how I temporary disable Toro or even permanently disable Toro. Hope this help.
+
+I'm actively working on ver 2 of this lib, which will shift to ExoPlayer as playback backend. Hopefully I could release it soon. So please stay tune. ",,,api.github.com,,false,[],[],"[""@chetanurmaliya""]",[]
+issue_comment,62,eneim,Toro,chetanurmaliya,2016-06-24 09:28:37+00:00,"For the low network i used  Toro.setStrategy(REST);
+After that auto play is stopped. But UI still hangs with log.
+
+`D/MediaPlayer: setDataSource IOException happend : 
+                                                                   java.io.FileNotFoundException: No content provider: http://xyz.s3.amazonaws.com/media/videos/VID_01d45ba7-4b14-4498-85af-124fccc8c4a8_1466684966053.mp4
+                                                                       at android.content.ContentResolver.openTypedAssetFileDescriptor(ContentResolver.java:1117)
+                                                                       at android.content.ContentResolver.openAssetFileDescriptor(ContentResolver.java:970)
+                                                                       at android.content.ContentResolver.openAssetFileDescriptor(ContentResolver.java:897)
+                                                                       at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1112)
+                                                                       at im.ene.lab.toro.widget.ToroVideoView.openVideo(ToroVideoView.java:635)
+                                                                       at im.ene.lab.toro.widget.ToroVideoView.access$2000(ToroVideoView.java:68)
+                                                                       at im.ene.lab.toro.widget.ToroVideoView$8.onSurfaceTextureAvailable(ToroVideoView.java:289)
+                                                                       at android.view.TextureView.getHardwareLayer(TextureView.java:370)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15443)
+                                                                       at android.view.View.getDisplayList(View.java:15488)
+                                                                       at android.view.View.draw(View.java:16258)
+                                                                       at android.view.ViewGroup.drawChild(ViewGroup.java:3713)
+                                                                       at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3506)
+                                                                       at android.view.View.draw(View.java:16539)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15466)
+                                                                       at android.view.View.getDisplayList(View.java:15488)
+                                                                       at android.view.View.draw(View.java:16258)
+                                                                       at android.view.ViewGroup.drawChild(ViewGroup.java:3713)
+                                                                       at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3506)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15461)
+                                                                       at android.view.View.getDisplayList(View.java:15488)
+                                                                       at android.view.View.draw(View.java:16258)
+                                                                       at android.view.ViewGroup.drawChild(ViewGroup.java:3713)
+                                                                       at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3506)
+                                                                       at android.view.View.draw(View.java:16539)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15466)
+                                                                       at android.view.View.getDisplayList(View.java:15488)
+                                                                       at android.view.View.draw(View.java:16258)
+                                                                       at android.view.ViewGroup.drawChild(ViewGroup.java:3713)
+                                                                       at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3506)
+                                                                       at android.view.View.draw(View.java:16539)
+                                                                       at android.widget.FrameLayout.draw(FrameLayout.java:598)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15466)
+                                                                       at android.view.View.getDisplayList(View.java:15488)
+                                                                       at android.view.View.draw(View.java:16258)
+                                                                       at android.view.ViewGroup.drawChild(ViewGroup.java:3713)
+                                                                       at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3506)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15461)
+                                                                       at android.view.View.getDisplayList(View.java:15488)
+                                                                       at android.view.View.draw(View.java:16258)
+                                                                       at android.view.ViewGroup.drawChild(ViewGroup.java:3713)
+                                                                       at android.support.v7.widget.RecyclerView.drawChild(RecyclerView.java:3838)
+                                                                       at android.view.ViewGroup.dispatchDraw(ViewGroup.java:3506)
+                                                                       at android.view.View.draw(View.java:16539)
+                                                                       at android.support.v7.widget.RecyclerView.draw(RecyclerView.java:3308)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15466)
+                                                                       at android.view.View.getDisplayList(View.java:15488)
+                                                                       at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3697)
+                                                                       at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3676)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15426)
+                                                                       at android.view.View.getDisplayList(View.java:15488)
+                                                                       at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3697)
+                                                                       at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3676)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15426)
+                                                                       at android.view.View.getDisplayList(View.java:15488)
+                                                                       at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3697)
+                                                                       at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3676)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15426)
+                                                                       at android.view.View.getDisplayList(View.java:15488)
+                                                                       at android.view.ViewGroup.recreateChildDisplayList(ViewGroup.java:3697)
+                                                                       at android.view.ViewGroup.dispatchGetDisplayList(ViewGroup.java:3676)
+                                                                       at android.view.View.updateDisplayListIfDirty(View.java:15426)
+                                                                   	at android.view.View.getDispl`",,,api.github.com,,false,"[""http://xyz.s3.amazonaws.com/media/videos/VID_01d45ba7-4b14-4498-85af-124fccc8c4a8_1466684966053.mp4""]",[],[],[]

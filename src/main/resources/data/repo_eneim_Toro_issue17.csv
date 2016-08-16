@@ -1,0 +1,209 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,17,eneim,Toro,brittonjg,2016-03-02 11:46:23+00:00,"Hi,
+
+Thanks for the great library. I have been trying to implement this on a recommendation from a different library (FastAdapter), but I have noticed a couple of issues. I can post these a separate issues if required.
+
+1. **Playback off screen** with a ViewPager - I have managed to combat that before with `setUserVisibleHint` from the Fragment. Although I am not sure how you would do this with your implementation yet
+2. **Playback off screen** whilst scrolling - If you scroll the play video off the screen, but then scroll very slightly whilst keeping it off the visible screen you can still hear the video playing even though it isn't visible. It seems like the visibility calculator isn't catching it for some reason. Either that or one of the next videos isn't switching from its Prepared state
+3. **Looping** - I notice you have this kind of setup in the Toro strategies. When will this become available? I want to loop the videos continuously, but know when they have stopped before they loop again. Or should this be done when `onPlaybackStopped` is called, but you don't have access to a MediaPlayer, so I'm not sure how to loop back around.
+
+All of these points I can replicate in the supplied demo application. I am using very short content ≈8 seconds long, with sounds. Hence why I noticed some of these issues.
+
+I am testing this on an Nexus 5 running Android 5.0 using Toro 1.1.0.",start issue,Playback inconsistencies,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,eneim,2016-03-02 13:37:12+00:00,"Hi @brittonjg . Thanks for your detailed issue. I would like to response each point :D
+
+1. Yeah ViewPager is a pain. I'm thinking of using GlobalFocusChangedListener to catch the ""in-screen"" RecyclerView. There is 2 points here: first - it is said that the ViewTreeObserver retrieved from view.getViewTreeObserver() is not always alive. second - Google's Youtube Player API use the same thing in between the onAttachToWindow and onDetachFromWindow. So I think this could solve the problem.
+
+2. This is maybe my fault. I will investigate.
+
+3. I want to research a little bit more. But in the meantime, it seems that loop playback is highly requested. I would try to do something in next release soon.
+
+Hopefully 1.2.0 will come with the support for ViewPager's page changes and loop playback. So stay tune :D. Thanks for using this again. And please feel free to report whatever issue you have.",,,api.github.com,,false,[],[],"[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-02 13:45:17+00:00,"@eneim I only have the utmost respect for your library. I have tried my own implementations, other peoples and combinations of the above. This is just not a simple task, so I thank you for your work here!
+
+Excellent news! Are you looking at days, weeks or longer for that release? I can always do some more investigation if it would help? The looping is definitely a must for me! :+1: Although it would be good to have some way of catching understanding when a loop has occurred, with a callback or something similar.",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-02 14:41:01+00:00,"@eneim I have noticed that once a video plays, it is then triggered to play again when the user scrolls the list (as long as the bounds are still valid). This sometimes lags or doesn't render correctly.
+
+Is the restarting of the content, the intended behavior?
+
+Forgot to include, if I want to implement my own `ToroViewHolder`. Shouldn't the helper `VideoViewHolderHelper`be accessible to me? It won't work without it, but I don't seem to have access to it. Your sample works because `ToroViewHolder` is within the same package.",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-02 14:45:49+00:00,"@brittonjg Thanks. For the later comment, I think I noticed it too and made a commit. I will release next one within 1 week or so, not too long :D. I'm reminding some minor fixes too, so please wait.",,,api.github.com,,false,[],[],"[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-07 08:52:10+00:00,"hi @brittonjg , could you use this to test with your current issues?
+
+```compile 'com.github.eneim:Toro:develop-SNAPSHOT'```
+
+Except for the ViewPager issue, I tried to give a try on loop playback and some other tune up. Please take a look.",,,api.github.com,,false,[],[],"[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,gouravd,2016-03-07 11:21:11+00:00,@eneim How to use the new Loop playback feature in 1.2.0?,,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-07 11:47:00+00:00,"@gouravd I have only just started looking at the changes, but I think it should be something like the below.
+
+![image](https://cloud.githubusercontent.com/assets/12110204/13568602/4803e490-e45a-11e5-919d-6049e6250e77.png)",,,api.github.com,,false,"[""https://cloud.githubusercontent.com/assets/12110204/13568602/4803e490-e45a-11e5-919d-6049e6250e77.png""]",[],"[""@gouravd""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-07 11:53:34+00:00,Forgot to tell. I updated the draft for 1.2.0 on CHANGELOG.md. Please take a look.,,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-07 12:17:06+00:00,"@gouravd That seems to be working correctly for me. What is your issue?
+
+@eneim Things I have noticed:
+
+1. VideoViewHolderHelper - This is still private, so from what I can tell it's impossible to implement ToroPlayer directly.
+2. Looping - Seems to be working great! It would still be good to have a callback to know when it has looped. `onPlaybackStopped` doesn't get fired and the position never quite reaches the duration in `onPlaybackProgress`
+3. I still seem to have videos that aren't visible playing. This is without changing fragment. I'll try to investigate why this is happening.",,,api.github.com,,false,[],[],"[""@eneim"", ""@gouravd""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-07 12:39:50+00:00,"@brittonjg As said, ViewPager is a little bit more complicated and I **didn't** have good support for that. So your behavior is unchanged. For the 1st point, it maybe my fault again (It suppose to be public I guess). 2nd point by intended at the point I add the code, and would be improved in the future. Thanks.
+
+@brittonjg Did a look back. I seemed that I marked VideoViewHolderHelper as *Internal API* by some reason. I would figure out from my note and implementation.",,,api.github.com,,false,[],[],"[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-07 12:43:42+00:00,"@eneim Your support is greatly appreciated.
+
+Yes, setting it to public should be a good fix. Apart from those issues it is coming along nicely",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-07 13:06:09+00:00,"@eneim I tried setting an `setOnCompletionListener` that broke the looping, so I do not think that is quite the way to solve knowing when the looping occurs.",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-07 13:12:51+00:00,"@brittonjg Thanks again. Here is my latest fix on loop: fix a line to trigger onPlaybackStopped, then lookup the loop ability: [code](https://github.com/eneim/Toro/blob/feature/v1.2/fix-loop/toro/src/main/java/im/ene/lab/toro/Toro.java#L321).
+
+So you mean that call setOnCompletionListener by yourself will broke the loop? That might because you didn't have the VideoViewHelper to get access back to root. Please give a sample code if you don't might :D.",,,api.github.com,,false,"[""https://github.com/eneim/Toro/blob/feature/v1.2/fix-loop/toro/src/main/java/im/ene/lab/toro/Toro.java#L321""]",[],"[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-07 13:59:28+00:00,"@eneim I've got the code checked out, so I will build it from my machine and add the library in manually for now to save you having to upload. I'll check that change now!",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-07 14:04:36+00:00,"@eneim Is it best to discuss everything on here or shall we move to another messaging system?
+
+`VideoViewHolderHelper `and `Toro.getHelper` need to be public in order for people to implement their own `ToroViewHolder`.",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-07 14:20:54+00:00,"@brittonjg From 1.2.0 I would open a **gitter** for this kind of discussion though. But for now, it would be Ok. 
+
+I will make ```VideoViewHolderHelper``` as a public class (not interface anymore. It must be typed) and remove ```Toro#getHelper()``` since this method's purpose is not so clear.",,,api.github.com,,false,[],[],"[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-07 14:22:27+00:00,"FYI the Idea after ```VideoViewHolderHelper``` is learnt from ```NestedScrollViewParentHelper```, which allows platform to hook in to Client to provide its support.",,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-07 18:20:25+00:00,"@eneim I have changed those to public in my version and that seems to work well.
+
+I still have videos playing which are off screen for some reason, which seems to happen if I keep my finger held down when scrolling. I'm still trying to investigate this to see if it's my issue, although I'm not sure how it would be.
+
+Edit it only seems to play the next when the currently playing is recycled...",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-08 01:23:44+00:00,"@brittonjg 
+> I still have videos playing which are off screen
+
+They are working as before. ViewPager is not supported yet at the mean time. I'm finding a better way.
+
+And VideoViewHolderHelper will be made public so Client could implement their own.",,,api.github.com,,false,[],[],"[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-08 10:19:55+00:00,@eneim I mean playing off screen vertically/horizontally in the list. Not after swiping left/right. Although it is still in a view pager if that has an effect?,,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-08 10:55:38+00:00,"Oh sorry I get your point. I focused to much on ViewPager :D. Well could you describe your off-screen issue in a new one and give me some detail: your Layout Manager and orientation, quantity of Videos (one or many), position of first Video (very first one of the list/grid or not). FYI I figured out once before and made a fix on 1.2.0, but let me double check that before the final release.",,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-08 22:23:24+00:00,"Haha! Not a problem, I suppose it could be ViewPager related, it's awkward enough!
+
+So, I have a recyclerview with ""cards"" which all have a video, they are all structured with video then text underneath that can be of varying height. Layoutmanager is just a LinearLayoutManager with one column with the orientation locked to portrait. Many videos as I am loading 30 cards at a time.
+
+I'd be very greatful if you could have a look at it. If we can correct these last little bits I would be much happier just going with your library. If you drop me your gmail address I can add you to my internal release of my app. That may give you a better understanding of what I am trying to achieve.
+
+
+
+",,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,eneim,2016-03-08 23:22:12+00:00,Hmm i'm curious about the bug. Please add this: nam@ene.im . ,,,api.github.com,,false,[],[],"[""@ene""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-09 03:16:58+00:00,@brittonjg I add some new stuff to develop branch. It gonna be up and running by the time you online. Please checkout ```compile 'com.github.eneim:Toro:develop-SNAPSHOT'``` to see if it helps.,,,api.github.com,,false,[],[],"[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-09 15:19:17+00:00,"Opt in link is - https://play.google.com/apps/testing/com.fanatix.mobile
+
+Notice how some videos don't play until they are quite far up the screen. It's because the previous off screen video is still playing. I usually find this by finding one with sound and playing about with the scrolling.
+
+It should be updated on GooglePlay by 7pm GMT with your latest snapshot.",,,api.github.com,,false,"[""https://play.google.com/apps/testing/com.fanatix.mobile""]",[],[],[]
+issue_comment,17,eneim,Toro,eneim,2016-03-10 02:22:52+00:00,Oh thanks. I can use it now. Yeah I could see weird behaviour sometime. I'm suspecting that the CoordinatorLayout takes part in the bug. Could you pull the latest develop branch (with new visibleOffset logic) and log out that offset value on your scroll? I will try my own later.,,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-10 14:40:19+00:00,"The issue is quite visible in the logs, but the fix might not be so easy to understand. Seems that 1.0 is being returned for items that aren't on the screen. I do have different height cards, but I don't think that would effect this.
+
+VisibleAreaOffset for item0 = 1.0
+VisibleAreaOffset for item0 = 1.0
+VisibleAreaOffset for item1 = 1.0
+VisibleAreaOffset for item0 = 1.0
+VisibleAreaOffset for item0 = 1.0
+VisibleAreaOffset for item1 = 1.0
+VisibleAreaOffset for item0 = 1.0
+VisibleAreaOffset for item0 = 1.0
+VisibleAreaOffset for item1 = 0.15346535
+VisibleAreaOffset for item0 = 0.92574257
+VisibleAreaOffset for item0 = 0.92574257
+VisibleAreaOffset for item1 = 0.30858085
+
+I am using the latest support libraries. I have had my bets on it being the co-ordinator view for a while. I am tempted to remove it as a test, but that is quite difficult. I will have a look though",,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-10 17:01:59+00:00,"I removed the CoordinatorLayout and the issue persisted. Really not sure what is causing this now.
+
+For clarification I am using Support libraries 23.2.0 not the latest 24 aplha versions.",,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,eneim,2016-03-11 01:14:49+00:00,i see. There is one line above the offset calculation where I think it is the core issue. I will try to debug your view hierarchy to see if my rectangles work well or not :D,,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-13 22:50:21+00:00,"@eneim I think I have it sorted for 23.2.1 with FastAdapter. I have taken my ViewAnimator out and that seems to have sorted things. At least with my testing this evening. I will work on it further tomorrow to make sure it is working.
+
+Apart from that I just need to sort out the ViewPager stopping the the playback when the user moves to a new tab. Have you managed to get any further with that? I will also look into it tomorrow.",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-14 02:12:23+00:00,"@brittonjg Thanks. I'm not really a fan of FastAdapter though, so Don't have many ideas how things work with that. If you have a ViewAnimator wrapped ViewHolder, I'm curious to see how, since It seems to be directly related to the issue.
+
+About ViewPager stuff, there is a high chance I would use Global Focus Change to catch the current active RecyclerView(s). In most difficult case, where there are multiple RecyclerView in one screen, I need a bit more time to figure out a simple way to deal with them though.",,,api.github.com,,false,[],[],"[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-14 13:54:26+00:00,"@brittonjg There is slightly big change I would like to add to current develop SNAPSHOT: instead of asking client to set Toro's config and use it globally, I will add ```ToroPlayer#isLoopAble()``` and ask client to return proper boolean value for each ViewHolder. I hope that this way, people could have more control on how and when a Player could be able to loop (for example: too long video should not loop while a short video could). 
+
+This comment is to notice you this change (you may use the SNAPSHOT for now though). Final release would come as soon as I figure out how to deal with ViewPager (or not be able to easily deal with it for now :D).
+
+***Update***: I merge the change at [this PR](https://github.com/eneim/Toro/pull/24)",,,api.github.com,,false,"[""https://github.com/eneim/Toro/pull/24""]","[{""raw"": ""https://github.com/eneim/Toro/pull/24"", ""refstyle"": ""url"", ""parts"": [""eneim"", ""Toro"", ""24"", """"]}]","[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-14 14:09:25+00:00,"@eneim I had the ViewAnimator wrapping the RecyclerView, to transition to a no connection layout. I have now taken that out, but still I get the same issues.
+
+I still get the same issues, although playback does seem to be improving.
+
+Another thing I have noticed is that you always display a ""Can't play this video dialog"". This happens because I can't return true for the Media Players onError method. Is this something that can be altered?",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-14 14:12:56+00:00,"I have noticed that ""Can't play this video dialog"". Actually, The official VideoView has that, and will show the dialog when your Video is failed to prepared. I would like to keep the custom implement as transparent with it as possible. But I agree that it is so annoying and gonna change it with a better way (a Toast or a callback).",,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-14 14:29:45+00:00,"I was going to change it to a SnackBar (less intrusive to the user), it is because your onError always returns false I believe. Therefore the VideoView handles the error with its standard process i.e. the dialog message.
+
+```
+  @Override public final boolean onError(MediaPlayer mp, int what, int extra) {
+    return mHelper.onError(this, mp, what, extra);
+  }
+```
+
+The below should have some way to effect the onError to say that error has been caught and handled appropriately.
+  ```
+@Override public void onPlaybackError(MediaPlayer mp, int what, int extra) {
+    mPlayable = false;
+  }
+```
+At least that is my understanding of how the VideoView works usually. Therefore it would keep with your want for standard functionality whilst still allowing for customisation.",,,api.github.com,,false,[],[],"[""@Override""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-14 14:40:56+00:00,"Ha, got it.",,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-14 15:03:02+00:00,"I have just released a new version with your latest changes. Unfortunately, it still seems to be susceptible to the scrolling issue.
+
+I shall have a look at the ViewPager issue from my end as well now. As I would like to release it without that issue.",,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-15 11:36:34+00:00,"I am solely looking into my playback issues today. I am struggling to understand why I have videos playing off screen. Especially when they give me values likes this (the video is now off screen). Is your `getRecyclerViewRect` meant to be the RecyclerView or the item within it? My itemView is of type CardView, but in your example yours is LinearLayout which seems to be in contrast to the name of that method.
+
+![image](https://cloud.githubusercontent.com/assets/12110204/13776433/f6a512b0-eaa1-11e5-891c-e0b3d23c33dc.png)
+
+Edit- This is correct as you're looking for the parents `getGlobalVisibleRect` my search continues.
+
+It would seem, that because I have some text under the video. The code seems to be restarting the video, that is off screen. I am going to try and replicate on your sample app.
+
+Okay, that is easier to replicate than I imagined. Replace the below into your layout `vh_toro_video_simple`. Now scroll down, so the video is out of video, but the text is in view. It causes the video above the text to restart playing. I was on Deadly Simple Video List with Big Buck Bunny. That seems to cause the issue I am seeing. Now to find out why...
+
+```
+  <TextView
+      android:id=""@+id/info""
+      android:layout_width=""match_parent""
+      android:layout_height=""80dp""
+      android:layout_alignParentBottom=""true""
+      android:layout_alignParentEnd=""true""
+      android:layout_alignParentRight=""true""
+      android:layout_below=""@id/video""
+      android:layout_margin=""4dp""
+      android:background=""#80000000""
+      android:gravity=""center""
+      android:includeFontPadding=""false""
+      android:paddingBottom=""4dp""
+      android:paddingEnd=""8dp""
+      android:paddingStart=""8dp""
+      android:paddingTop=""4dp""
+      android:singleLine=""true""
+      android:textAppearance=""@style/TextAppearance.AppCompat.Small""
+      android:textColor=""@android:color/white""
+      />
+```",,,api.github.com,,false,"[""https://cloud.githubusercontent.com/assets/12110204/13776433/f6a512b0-eaa1-11e5-891c-e0b3d23c33dc.png""]","[{""raw"": ""#80000000"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""80000000"", """"]}]","[""@android"", ""@id"", ""@style""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-15 13:14:52+00:00,"Okay, so something seems pretty strange here. It is definitely an issue within `visibleAreaOffset` It would seem that when the video goes off screen it causes the code to think that the height is back to full which triggers the method to return 1.0f. I noticed that if the video height between parentRect and videoRect aren't equal when the video is off screen. I am sure something else is incorrect, but my workaround currently is to add `parentRect.height() == videoRect.height()` to the check.
+
+Interested to know your thoughts on this.
+
+![image](https://cloud.githubusercontent.com/assets/12110204/13778538/5926b02c-eaae-11e5-8e81-b520f309495d.png)",,,api.github.com,,false,"[""https://cloud.githubusercontent.com/assets/12110204/13778538/5926b02c-eaae-11e5-8e81-b520f309495d.png""]",[],[],[]
+issue_comment,17,eneim,Toro,eneim,2016-03-15 14:26:37+00:00,"@brittonjg I'm reading your log and comments, but ***parentRect*** --> the ***RecyclerView's rect*** and the videoRect is an Item's video rectangle. So ***parentRect*** supposes to be larger than videoRest in general, except for the case your Video is too big.",,,api.github.com,,false,[],[],"[""@brittonjg""]",[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-15 14:43:43+00:00,"@eneim That confused me as well. I did manage to replicate it on your sample app (as per my comments), so maybe it is worth having a further look into that? I think something strange happens when it isn't just the video in the holder effecting the height.",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,17,eneim,Toro,eneim,2016-03-15 14:51:59+00:00,"I have 2 screenshots which could be easier to understand:
+
+Note that the selected lines are the VideoView and its rectangle. And you can see its RecyclerView parent and its rect.
+
+- **Screenshot 1**
+
+<img width=""550"" alt=""screenshot 2016-03-15 23 47 44"" src=""https://cloud.githubusercontent.com/assets/1776230/13781963/861de97e-eb08-11e5-863a-afbd408e2334.png"">
+
+- **Screenshot 2**
+
+<img width=""550"" alt=""screenshot 2016-03-15 23 48 22"" src=""https://cloud.githubusercontent.com/assets/1776230/13781980/975e818a-eb08-11e5-95de-a65bfc926518.png"">",,,api.github.com,,false,"[""https://cloud.githubusercontent.com/assets/1776230/13781963/861de97e-eb08-11e5-863a-afbd408e2334.png"", ""https://cloud.githubusercontent.com/assets/1776230/13781980/975e818a-eb08-11e5-95de-a65bfc926518.png""]",[],[],[]
+issue_comment,17,eneim,Toro,brittonjg,2016-03-15 14:54:13+00:00,"What happens if you added my change to your TextView? Does it act in the same way on ""Deadly Simple Video List""?",,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,eneim,2016-03-15 14:55:42+00:00,It'll just be fine. Since I will just care about the VideoView's rectangle.,,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,eneim,2016-03-15 14:57:03+00:00,"I setup a gitter channel for Toro. Not public yet, but let's have discussion there. Link is here: https://gitter.im/eneim/Toro",,,api.github.com,,false,"[""https://gitter.im/eneim/Toro""]",[],[],[]
+issue_comment,17,eneim,Toro,gouravd,2016-03-23 16:27:59+00:00,Has anything changed in the snapshot version regarding the loop? The videos are not playing in loop anymore,,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,eneim,2016-03-24 00:48:32+00:00,"Stay tune, I just change default behavior to not looping. Please check out latest code base. I'm gonna prepare a release on that soon.",,,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,gouravd,2016-03-30 08:05:00+00:00,The snapshot is not available now (as I am writing this). Could you suggest and alternative,,,api.github.com,,false,[],[],[],[]
+issue_closed,17,eneim,Toro,eneim,2016-04-17 03:04:24+00:00,,closed issue,Playback inconsistencies,api.github.com,,false,[],[],[],[]
+issue_comment,17,eneim,Toro,eneim,2016-04-17 03:04:24+00:00,I close this issue as 1.2.0 could somehow full-fill the need. And new issue should be open for fresher discussions.,,,api.github.com,,false,[],[],[],[]

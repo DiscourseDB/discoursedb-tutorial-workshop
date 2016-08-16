@@ -1,10 +1,12 @@
-"rectype","issueid","project_owner","project_name","actor","time","text","action","title","provenance","plus_1","urls","issues","userref","code"
-"issue_title",180,"mozilla","mozregression","None","None",,"write","reduce nightly to inbound range from 7 days to 4","githubarchive->issue_titles",FALSE,"[]","[]","[]","[]"
-"pull_request_history",180,"mozilla","mozregression","parkouss","2015-02-07 00:12:56+00:00",,"opened",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"issue_comment",180,"mozilla","mozregression","coveralls","2015-02-07 00:16:05+00:00","
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,180,mozilla,mozregression,parkouss,2015-02-06 18:10:04+00:00,reduce nightly to inbound range from 7 days to 4,f5f0a0c381e555a59fce2d4d142657350e039b55,,api.github.com,,false,[],[],[],[]
+issue_title,180,mozilla,mozregression,parkouss,2015-02-06 18:12:56+00:00,,start issue,reduce nightly to inbound range from 7 days to 4,api.github.com,,false,[],[],[],[]
+pull_request_title,180,mozilla,mozregression,parkouss,2015-02-06 18:12:56+00:00,,f5f0a0c381e555a59fce2d4d142657350e039b55,reduce nightly to inbound range from 7 days to 4,api.github.com,,false,[],[],[],[]
+issue_comment,180,mozilla,mozregression,coveralls,2015-02-06 18:16:05+00:00,"
 [![Coverage Status](https://coveralls.io/builds/1879161/badge)](https://coveralls.io/builds/1879161)
 
 Coverage decreased (-0.08%) to 91.74% when pulling **f5f0a0c381e555a59fce2d4d142657350e039b55 on parkouss:reduce-nightly-to-inbound-range** into **b09e95b5e1be464ad48531f67b191a1e2d3b05f2 on mozilla:master**.
-","issue",,"ghtorrent",FALSE,"[""https://coveralls.io/builds/1879161/badge)](https://coveralls.io/builds/1879161)""]","[]","[]","[]"
-"pull_request_commit_comment",180,"mozilla","mozregression","wlach","2015-02-07 00:19:59+00:00","Does this mean that the window is effectively 3?","comment",,"ghtorrent",FALSE,"[]","[]","[]","[]"
-"pull_request_history",180,"mozilla","mozregression","parkouss","2015-02-07 01:50:36+00:00",,"closed",,"ghtorrent",FALSE,"[]","[]","[]","[]"
+",,,api.github.com,,false,"[""https://coveralls.io/builds/1879161"", ""https://coveralls.io/builds/1879161/badge""]",[],[],[]
+commit_comments,180,parkouss,mozregression,wlach,2015-02-06 18:19:59+00:00,Does this mean that the window is effectively 3?,f5f0a0c381e555a59fce2d4d142657350e039b55,"(13, 343, u'mozregression/bisector.py')",api.github.com,,false,[],[],[],[]
+issue_closed,180,mozilla,mozregression,parkouss,2015-02-06 19:50:33+00:00,,closed issue,reduce nightly to inbound range from 7 days to 4,api.github.com,,false,[],[],[],[]
+pull_request_merged,180,mozilla,mozregression,parkouss,2015-02-06 19:50:33+00:00,reduce nightly to inbound range from 7 days to 4,2759085c4b38b86f3f7a64372eb9aa930e60488a,Pull request merge from parkouss/mozregression:reduce-nightly-to-inbound-range to mozilla/mozregression:master,api.github.com,,false,[],[],[],[]

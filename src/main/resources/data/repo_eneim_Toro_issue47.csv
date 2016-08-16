@@ -1,0 +1,67 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,47,eneim,Toro,deeppandya,2016-05-25 16:59:49+00:00,"I am having below error when i try to load video in recyclerview. Some times it works some times my screen is empty.
+
+W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: /data/user/0/com.example.test/files/media/m_4083661.mp4
+05-25 12:56:41.841 22929-22929/com.example.test W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+
+Could you please check it and please let me know ?
+
+Thanks. great library",start issue,no content provider error,api.github.com,,false,[],[],[],[]
+issue_comment,47,eneim,Toro,eneim,2016-05-26 01:00:20+00:00,So you are loading file from your app's file folder? I will reproduce the issue to see if I could help.,,,api.github.com,,false,[],[],[],[]
+issue_comment,47,eneim,Toro,deeppandya,2016-05-26 04:50:55+00:00,"Thanks for your quick response. i am having this problem since last week. and i checked everything in my code. 
+I can send you my code if it helps you to speed things up.
+
+let me know.
+
+Thanks again",,,api.github.com,,false,[],[],[],[]
+issue_comment,47,eneim,Toro,eneim,2016-05-26 04:57:55+00:00,Thanks. It will be definitely helpful.,,,api.github.com,,false,[],[],[],[]
+issue_comment,47,eneim,Toro,deeppandya,2016-05-30 20:43:47+00:00,"Hello,
+
+Any update regarding this problem ? 
+it's strange because some time it's working but sometimes i am having black screen. like i can see the video information like title,etc. but video is not playing and giving below error,
+
+W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: /data/user/0/com.example.test/files/media/m_4083661.mp4
+05-25 12:56:41.841 22929-22929/com.example.test W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+
+In my code,
+in the **bind** method of viewholder, 
+mVideoView.setVideoURI(Uri.parse(mItem.getFile().getAbsolutePath()));
+
+I am setting path of the file from the local file system.
+
+Let me know if you need more information.
+
+Thanks",,,api.github.com,,false,[],[],[],[]
+issue_comment,47,eneim,Toro,eneim,2016-06-03 13:45:55+00:00,@deeppandya So sorry. I'm focusing on some new stuff mean while having so less of time. I will spend time investigating this weekend.,,,api.github.com,,false,[],[],"[""@deeppandya""]",[]
+issue_comment,47,eneim,Toro,deeppandya,2016-06-07 15:13:18+00:00,"Hello,
+
+I am having below error,
+
+06-07 11:07:42.144 19711-19711/com.app.example W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: /data/user/0/com.app.example/files/media/m_228753.mp4
+06-07 11:07:42.146 19711-19711/com.app.example W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+06-07 11:07:42.153 19711-19711/com.app.example W/MediaPlayer: Couldn't open file on client side; trying server side: java.io.FileNotFoundException: No content provider: /data/user/0/com.app.example/files/media/m_4083661.mp4
+06-07 11:07:42.156 19711-19711/com.app.example W/MediaPlayer: setScreenOnWhilePlaying(true) is ineffective without a SurfaceHolder
+
+After having this error, if i open another activity and come back to video activity it's not working. everytime i have to kill the application and then if i open video activity, it's working.
+
+Can you please help me with this ? this is the only i am having. everything working fine. 
+
+Thanks",,,api.github.com,,false,[],[],[],[]
+issue_comment,47,eneim,Toro,eneim,2016-06-08 02:18:51+00:00,@deeppandya Ok sorry. I will actively working on this from now. Please post here your Activity class which plays the Videos. I want to see your setup for Toro and looking at other life cycle implementation. Thanks and sorry.,,,api.github.com,,false,[],[],"[""@deeppandya""]",[]
+issue_comment,47,eneim,Toro,eneim,2016-06-09 01:46:38+00:00,"Could you try the following suggestions?
+
+[This one](http://stackoverflow.com/questions/33434315/mediaplayer-fails-to-open-parsed-uri)
+
+[And this one](https://groups.google.com/forum/m/#!topic/android-developers/I3L6-xvdcHQ).
+
+It seems that this is either an issue of MediaPlayer class.
+
+FYI I'm working on a new version which is built on top of ExoPlayer. So hopefully It could solve your problems better. Please let me know if these urls help.",,,api.github.com,,false,"[""http://stackoverflow.com/questions/33434315/mediaplayer-fails-to-open-parsed-uri"", ""https://groups.google.com/forum/m/#!topic/android-developers/I3L6-xvdcHQ""]",[],[],[]
+issue_comment,47,eneim,Toro,jmartinez360,2016-06-23 14:11:46+00:00,"Hello I am having the same error with this:
+Uri uri = Uri.parse(((Video) object).getUrl());
+      mVideoView.setVideoURI(uri);",,,api.github.com,,false,[],[],[],[]
+issue_comment,47,eneim,Toro,deeppandya,2016-06-23 14:56:09+00:00,"hey,
+try to create a content provider and instead of using Uri.parse, use content provider to get the files. it solved the issue for me.",,,api.github.com,,false,[],[],[],[]
+issue_comment,47,eneim,Toro,deeppandya,2016-06-23 14:56:58+00:00,"look at below link,
+https://developer.android.com/reference/android/support/v4/content/FileProvider.html",,,api.github.com,,false,"[""https://developer.android.com/reference/android/support/v4/content/FileProvider.html""]",[],[],[]
+issue_comment,47,eneim,Toro,eneim,2016-06-24 02:23:26+00:00,"@deeppandya It's good to hear that. Generally, Uri can be used for online content too, so using FileProvider could not solve every issue. Using it for local file is the right way I guess. Hm using ```Uri.parse(someUrl)``` is used in various places, I will try to figure out how could it help me. Thanks again.",,,api.github.com,,false,[],[],"[""@deeppandya""]",[]

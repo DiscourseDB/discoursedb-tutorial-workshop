@@ -1,0 +1,6 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,32,eneim,Toro,eneim,2016-04-05 15:55:03+00:00,,start issue,Fix video rect calculation,api.github.com,,false,[],[],[],[]
+pull_request_title,32,eneim,Toro,eneim,2016-04-05 15:55:03+00:00,,8e0ed9ead310cb79254a2fd4c54bfeb28f0eb630,Fix video rect calculation,api.github.com,,false,[],[],[],[]
+issue_closed,32,eneim,Toro,eneim,2016-04-05 15:55:07+00:00,,closed issue,Fix video rect calculation,api.github.com,,false,[],[],[],[]
+pull_request_merged,32,eneim,Toro,eneim,2016-04-05 15:55:07+00:00,Fix video rect calculation,d6c1bea4423e9e5efc6b7300b88f800b2a29fee4,Pull request merge from eneim/Toro:fix/video-rect-recalculate to eneim/Toro:develop,api.github.com,,false,[],[],[],[]
+pull_request_commit,32,eneim,Toro,eneim,2016-04-05 15:55:21+00:00,Fix video rect calculation,8e0ed9ead310cb79254a2fd4c54bfeb28f0eb630,,api.github.com,,false,[],[],[],[]

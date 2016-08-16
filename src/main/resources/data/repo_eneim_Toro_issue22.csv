@@ -1,0 +1,7 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,22,eneim,Toro,eneim,2016-03-07 13:04:45+00:00,Fix loop playback,8de2e373ee08ca75002d6f68b85287e25c29d685,,api.github.com,,false,[],[],[],[]
+pull_request_commit,22,eneim,Toro,eneim,2016-03-09 03:10:13+00:00,Various update and fixes,bf300eb2f7a3e70adcdaf1583ce7eb23c8e0fe74,,api.github.com,,false,[],[],[],[]
+issue_title,22,eneim,Toro,eneim,2016-03-09 03:13:27+00:00,,start issue,Feature/v1.2/fix loop,api.github.com,,false,[],[],[],[]
+pull_request_title,22,eneim,Toro,eneim,2016-03-09 03:13:27+00:00,,bf300eb2f7a3e70adcdaf1583ce7eb23c8e0fe74,Feature/v1.2/fix loop,api.github.com,,false,[],[],[],[]
+issue_closed,22,eneim,Toro,eneim,2016-03-09 03:13:32+00:00,,closed issue,Feature/v1.2/fix loop,api.github.com,,false,[],[],[],[]
+pull_request_merged,22,eneim,Toro,eneim,2016-03-09 03:13:32+00:00,Feature/v1.2/fix loop,b24b064f867472d862a55aee3be64464e4e4a10b,Pull request merge from eneim/Toro:feature/v1.2/fix-loop to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

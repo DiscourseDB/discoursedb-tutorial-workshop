@@ -1,0 +1,9 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,38,eneim,Toro,kikin81,2016-05-06 19:04:46+00:00,"In my implementation I playback muted videos in a recycler view.
+Unfortunately, if the user has another background music playing, the Toro video player will request focus automatically when the video is ready.
+
+I would like the ability to not do this in order to provide auto playing muted videos without interrupting the user's music from another app.",start issue,Add the ability for developers to request audio focus,api.github.com,,false,[],[],[],[]
+issue_comment,38,eneim,Toro,eneim,2016-05-10 05:21:25+00:00,"Hi @kikin81 , Would #40 solve your problem? I'm not really good at audio focusing and background video playback, so please take a look and give feedback. I will learn more and give my best effort to support.",,,api.github.com,,false,[],"[{""raw"": ""#40"", ""refstyle"": ""#d"", ""parts"": [""eneim"", ""Toro"", ""40"", """"]}]","[""@kikin81""]",[]
+issue_comment,38,eneim,Toro,kikin81,2016-05-11 18:18:48+00:00,"Hey @eneim, I work with @wemped and his PR satisfied my request.
+Thanks for taking a look.",,,api.github.com,,false,[],[],"[""@eneim"", ""@wemped""]",[]
+issue_closed,38,eneim,Toro,kikin81,2016-05-11 18:18:50+00:00,,closed issue,Add the ability for developers to request audio focus,api.github.com,,false,[],[],[],[]

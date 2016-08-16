@@ -1,0 +1,7 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+pull_request_commit,59,eneim,Toro,eneim,2016-06-09 07:41:52+00:00,Replace common listeners by state change listener,7534afd05a2185150cae043698f788a1980c0213,,api.github.com,,false,[],[],[],[]
+issue_title,59,eneim,Toro,eneim,2016-06-09 08:20:12+00:00,,start issue,Replace common listeners by state change listener,api.github.com,,false,[],[],[],[]
+pull_request_title,59,eneim,Toro,eneim,2016-06-09 08:20:12+00:00,,d4bee99669e44e7fc0f43e6d602206ce37cfbd13,Replace common listeners by state change listener,api.github.com,,false,[],[],[],[]
+pull_request_commit,59,eneim,Toro,eneim,2016-06-09 08:44:06+00:00,Clean up,d4bee99669e44e7fc0f43e6d602206ce37cfbd13,,api.github.com,,false,[],[],[],[]
+issue_closed,59,eneim,Toro,eneim,2016-06-09 08:46:25+00:00,,closed issue,Replace common listeners by state change listener,api.github.com,,false,[],[],[],[]
+pull_request_merged,59,eneim,Toro,eneim,2016-06-09 08:46:25+00:00,Replace common listeners by state change listener,c7d486e58eadf9e55d9154579efdcdc026292775,Pull request merge from eneim/Toro:feature/simplify-cycles-2 to eneim/Toro:develop,api.github.com,,false,[],[],[],[]

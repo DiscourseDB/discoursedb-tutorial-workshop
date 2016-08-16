@@ -1,0 +1,4 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,52,eneim,Toro,j3p0n,2016-06-06 06:30:28+00:00,"How to disable auto play, but user can still play/pause manualy? or disable auto play when network is on GPRS, and enabl auto play when on WIFI or 4G?
+",start issue,How to disable auto play,api.github.com,,false,[],[],[],[]
+issue_comment,52,eneim,Toro,eneim,2016-06-06 06:44:02+00:00,"@j3p0n You can have your own **Strategy** which does nothing, for example a **lazyStrategy**. So when you want to disable auto playback, just call **Toro.setStrategy(lazyStrategy)**. See how I implement **Toro.rest(boolean)** for more information.",,,api.github.com,,false,[],[],"[""@j3p0n""]",[]

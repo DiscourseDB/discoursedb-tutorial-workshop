@@ -1,0 +1,24 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,14,eneim,Toro,rahulrj,2016-02-18 20:03:25+00:00,"Isnt there a lag in autoplay(SINGLE VIDEO SIMPLE LIST) when i scroll up and then scroll again down to the video. I think because `prepare()` is called again on that `VideoView`  when i scroll back to it.
+
+There is no case in which i just scroll back to the previous video and it plays without even a single millisecond delay. It always takes some time to prepare and resume the content.",start issue,Lag in autoplay,api.github.com,,false,[],[],[],[]
+issue_comment,14,eneim,Toro,eneim,2016-02-19 02:08:53+00:00,"I would investigate this issue. But there is some points I could list out for the concern:
+
+- If a ViewHolder is out of the viewport, there is a high chance it got recycled. In that case, when you see the video again, it need to be bound to the data again, therefore, the Video got prepared again.
+
+- In single video list, I did not see the issue yet, so maybe it has something related to the Internet connection too. But if you could provide a gif file or a video demonstrate the issue it would be really helpful.",,,api.github.com,,false,[],[],[],[]
+issue_comment,14,eneim,Toro,rahulrj,2016-02-19 07:45:20+00:00,"The first point is correct. It needs to be bound to data again. So there will always be slight lag.
+I saw this issue in the sample app provided with this library running on WIFI. I will post the gif. 
+In a single video list also, this issue is bound to happen because the same recycling logic will happen if its a single or multiple video.",,,api.github.com,,false,[],[],[],[]
+issue_comment,14,eneim,Toro,rahulrj,2016-02-21 15:44:48+00:00,"@eneim . It certainly performs better than the Android MediaPlayer. +1 for that.
+But can you please let me know one thing? Using Toro, suppose i have a `ListView` and i have video at position 8 and 15.  Now i watch video at position 8 and scroll down to position from there. Now if i scroll back to position 8, its a high chance that the view that i get there is a recycled view. So for position 8, i will have to set the data-source of the video again and then it will prepare again and start playing.
+
+So how does Toro handles this prepare delay? Have you taken care of anything extra from Android Media Player to reduce this prepare time-delay?
+
+If not, is it possible that i save partial-downloaded video(10 s out of 60s) in a local temp file and then play the video using that local file? In this way, i already have the partial downloaded content,so it wont take much time to prepare.",,,api.github.com,,false,[],[],"[""@eneim""]",[]
+issue_comment,14,eneim,Toro,eneim,2016-02-22 01:35:47+00:00,"@rahulrj I understand your need. As said, I try to keep Toro staying out of the core implementation of playback process. Playing video is hard, I can say. And there are many ways to do so (and each will give a slightly different cycle). In fact, I'm trying to research more about some popular playback libraries to improve my playback cycle and implementation. It could turns out to be an extension of Toro which will support the playback only. 
+
+For you case, I want to try to play a list of local video (called a Playlist). But before any implementation, I would like to ask how would you play your parts smoothly? I know about HLS which could provide a playlist of such small parts of a Video so that client could play it more effectively. But for a list of local part files (list of .mp4, I guess), I have no imagine of how it would work. If you can help me this, I can make up some ideas.
+
+By the mean time, I think a proper way of caching the video locally could be a good solution. Take a look at this if it help (I have no idea for sure, but I will try too): [AndroidVideoCache](https://github.com/danikula/AndroidVideoCache)",,,api.github.com,,false,"[""https://github.com/danikula/AndroidVideoCache""]",[],"[""@rahulrj""]",[]
+issue_closed,14,eneim,Toro,eneim,2016-04-17 03:04:57+00:00,,closed issue,Lag in autoplay,api.github.com,,false,[],[],[],[]

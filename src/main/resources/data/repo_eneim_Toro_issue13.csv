@@ -1,0 +1,23 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,13,eneim,Toro,Apisov,2016-02-18 15:14:54+00:00,"Hello.
+Is it possible to play a video in loop?",start issue,Loop,api.github.com,,false,[],[],[],[]
+issue_comment,13,eneim,Toro,Apisov,2016-02-18 16:05:18+00:00,"Looks like I found some solution:
+calling ""resume"" of videoview in ""onPlaybackStopped"" method.
+
+Not sure that this is correct way, but it works anyway.",,,api.github.com,,false,[],[],[],[]
+issue_comment,13,eneim,Toro,eneim,2016-02-19 02:11:21+00:00,"In Strategy I prepared a ```allowsImmediateReplay``` for that purpose (actually it is a bad method naming, and I will change it anyway, in the future release). For now, Toro doesn't support this method yet. Because it is not that straightaway to determine when a playback properly complete. Some new Player API may not follow current MediaPlayer API and then onCompletion may not be called. So I would like to research a bit more to provide better support.
+
+For now your workaround could work in your case. So keep it. I will try to add the support as soon as possible.",,,api.github.com,,false,[],[],[],[]
+issue_comment,13,eneim,Toro,Apisov,2016-02-19 14:55:40+00:00,"I see. Thank you for your reply.
+
+If we started talking about future releases I have question:
+Why you decided don't give access to Media Player from ToroVideoView?
+In my case I was needed to mute sound or unmute. Or you have some another ways how to make it?",,,api.github.com,,false,[],[],[],[]
+issue_comment,13,eneim,Toro,eneim,2016-02-19 15:55:29+00:00,"@Apisov You mean the built-in ```im.ene.lab.toro.widget.ToroVideoView``` class? I think the story is opposite: you have control to the **MediaPlayer** (here: it is the *android.media.MediaPlayer*). In ```ToroVideoViewHolder``` class (which holds a ToroVideoView as its Video player widget), you can see that I implemented many callbacks from MediaPlayer's interfaces. From there, If you use my built-in ViewHolder, you can override ~~onPrepared~~ ```onVideoPrepared(MediaPlayer)``` method to have the control of the ```MediaPlayer object``` which has the responsibility to play your video. Note that this instance will be available after your Video is prepared (i.e onPrepared is the best place where you should access to it). And in my experience, you can control the Audio from there. Hope this help.
+
+In my comment, I would like to mention the modal API called [**ExoPlayer**](https://github.com/google/ExoPlayer). This player has a different API Interface, but it is more powerful than current MediaPlayer API. So I want to have my library to support it too. You can reference to it for more information.",,,api.github.com,,false,"[""https://github.com/google/ExoPlayer""]",[],"[""@Apisov""]",[]
+issue_closed,13,eneim,Toro,Apisov,2016-02-22 13:41:31+00:00,,closed issue,Loop,api.github.com,,false,[],[],[],[]
+issue_comment,13,eneim,Toro,Apisov,2016-02-22 13:41:31+00:00,"Thank you a lot for such a detailed answer. I missed this possibility to control MediaPlayer. This is what I was looking, yes.
+
+",,,api.github.com,,false,[],[],[],[]
+issue_comment,13,eneim,Toro,eneim,2016-02-25 13:47:28+00:00,@AmrMohammed89 Hey can you make this as a new issue? And if it is possible please post your part of code where you use the widget too. Thanks!,,,api.github.com,,false,[],[],"[""@AmrMohammed89""]",[]

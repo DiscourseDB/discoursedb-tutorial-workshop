@@ -1,0 +1,16 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,61,eneim,Toro,eneim,2016-06-12 06:08:55+00:00,"UI for Video Player
+
+- Single video
+  - [ ] Portrait/Minimised view
+  - [ ] Fullscreen
+
+- Playlist in one view
+  - [ ] Portrait/Minimised view
+  - [ ] Fullscreen
+",start issue,Extension for Video Playback Controller UI,api.github.com,,false,[],[],[],[]
+issue_comment,61,eneim,Toro,eneim,2016-06-12 06:10:00+00:00,"Ref:
+
+- [https://dribbble.com/tags/player](https://dribbble.com/tags/player)
+
+- [https://dribbble.com/tags/video_player](https://dribbble.com/tags/video_player)",,,api.github.com,,false,"[""https://dribbble.com/tags/player"", ""https://dribbble.com/tags/player"", ""https://dribbble.com/tags/video_player"", ""https://dribbble.com/tags/video_player""]",[],[],[]

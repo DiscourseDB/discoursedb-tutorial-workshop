@@ -1,0 +1,9 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,46,eneim,Toro,chetanurmaliya,2016-05-25 11:39:51+00:00,"I am using com.github.eneim:Toro:1.2.0
+
+It is loading entire video file before playing. ",start issue,Is ToroVideoView supports HTTP live streaming ?,api.github.com,,false,[],[],[],[]
+issue_comment,46,eneim,Toro,eneim,2016-05-25 12:18:26+00:00,"@chetanurmaliya Well, Toro doesn't take much care about how you play the Video, but maybe my customized ToroVideoView. Actually, it uses the original MediaPlayer to play the media content, so it depends on how that MediaPlayer API works. Actually I don't think MediaPlayer eager to download your entire video, but if you can give me a cue for that, I can investigate the behavior.
+
+In the mean time, you can take a look at ExoPlayer and a library name [ExoMedia](https://github.com/brianwernick/ExoMedia) which is created on top of ExoPlayer. I'm going to have the same think as first class supported player in Toro, just could not tell about the release date.",,,api.github.com,,false,"[""https://github.com/brianwernick/ExoMedia""]",[],"[""@chetanurmaliya""]",[]
+issue_comment,46,eneim,Toro,chetanurmaliya,2016-05-25 12:49:10+00:00,"Thanks a lot.
+",,,api.github.com,,false,[],[],[],[]

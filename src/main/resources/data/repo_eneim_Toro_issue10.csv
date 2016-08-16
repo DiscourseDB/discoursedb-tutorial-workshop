@@ -1,0 +1,3 @@
+rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code
+issue_title,10,eneim,Toro,eneim,2016-02-04 09:51:56+00:00,"If we register RecyclerView to Toro before it lays out its child, things work normally. But if we setup later, there would be unexpected behavior (Video doesn't play)",start issue,Register timing will affect behavior,api.github.com,,false,[],[],[],[]
+issue_closed,10,eneim,Toro,eneim,2016-02-06 02:43:53+00:00,,closed issue,Register timing will affect behavior,api.github.com,,false,[],[],[],[]
