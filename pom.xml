@@ -4,13 +4,14 @@
 	<parent>
 		<groupId>edu.cmu.cs.lti</groupId>
 		<artifactId>discoursedb-core</artifactId>
-		<version>0.5</version>
+		<version>0.7-SNAPSHOT</version>
 	</parent>
 	<artifactId>discoursedb-tutorial-workshop</artifactId>
 	<dependencies>
 		<dependency>
 			<groupId>edu.cmu.cs.lti</groupId>
 			<artifactId>discoursedb-model</artifactId>
+			<version>0.7-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
