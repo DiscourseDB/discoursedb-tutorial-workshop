@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Simple PoJo to represent rows in GitHub issue extracts in CSV format.<br/>
  * Expects files with the following header:<br/>
- * <code>rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,plus_1,urls,issues,userref,code</code><br/>
+ * <code>rectype,issueid,project_owner,project_name,actor,time,text,action,title,provenance,paths,plus_1,urls,issues,userref,code</code><br/>
  * 
  * @author Oliver Ferschke
  *
@@ -35,6 +35,7 @@ public class GitHubIssueComment {
 	private String action;
 	private String title;
 	private String provenance;
+	private List<String> paths;
 	private boolean plusOne;
 	private List<String> urls;
 	private String issues;
@@ -148,6 +149,25 @@ public class GitHubIssueComment {
 	}
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	public List<String> getPaths() {
+		return paths;
+	}
+
+	public void setPaths(String paths) {
+		if(paths.isEmpty()||paths.equals("\"\"")){
+			this.paths= new ArrayList<String>();
+			return;
+		}
+		ObjectMapper mapper = new ObjectMapper();
+		List<String> pathList= new ArrayList<String>();
+		try{
+			pathList = mapper.readValue(paths, new TypeReference<List<String>>(){});			
+		}catch(IOException e){
+			logger.error("Could not parse URL field", e);
+		}
+		this.paths = pathList;
 	}
 	
 	
